@@ -83,25 +83,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12090}
     - Class: 114
-      Script: {instanceID: 12306}
+      Script: {instanceID: 12236}
     - Class: 114
-      Script: {instanceID: 12740}
+      Script: {instanceID: 12308}
     - Class: 114
-      Script: {instanceID: 12826}
+      Script: {instanceID: 12742}
     - Class: 114
-      Script: {instanceID: 13768}
+      Script: {instanceID: 12828}
     - Class: 114
-      Script: {instanceID: 13824}
+      Script: {instanceID: 13770}
     - Class: 114
-      Script: {instanceID: 14004}
+      Script: {instanceID: 13826}
     - Class: 114
-      Script: {instanceID: 14416}
+      Script: {instanceID: 14006}
     - Class: 114
-      Script: {instanceID: 14654}
+      Script: {instanceID: 14418}
     - Class: 114
-      Script: {instanceID: 15048}
+      Script: {instanceID: 14656}
     - Class: 114
-      Script: {instanceID: 25114}
+      Script: {instanceID: 15050}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -241,6 +241,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 1be429beeb591dfd59b99992b070880e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PinchZoom
   - hash:
       serializedVersion: 2
       Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
@@ -661,12 +667,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 7e73e8ac9aa61b63aff6bd43dffca357
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PinchZoom
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity

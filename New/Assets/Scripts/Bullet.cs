@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public GameObject target { get; set; }
     public GameObject effect;
 
-    public float attack { get; set; }
+    public int attack { get; set; }
     public float speed;
 
     private GameObject canvas;
@@ -31,6 +31,10 @@ public class Bullet : MonoBehaviour
             Vector2 targetVec = target.transform.position;
             transform.position = Vector3.MoveTowards(transform.position, targetVec, speed * Time.deltaTime);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // 
@@ -41,6 +45,9 @@ public class Bullet : MonoBehaviour
             GameObject temp = Instantiate(effect, target.transform.position, Quaternion.identity);
             temp.transform.SetParent(canvas.transform);
             temp.transform.localScale = new Vector2(70f, 70f);
+
+            target.GetComponent<Enemy>().Damaged(attack);
+
             Destroy(this.gameObject);
         }
     }

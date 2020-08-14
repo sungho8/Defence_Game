@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    Controller_Tile controllerTile;
+    Controller_Enemy controllerEnemy;
+    Animation anim;
+
     public float speed = 0.1f;
     public int hp = 10;
 
     private int target = 0;
-    Controller_Tile controllerTile;
 
     void Awake()
     {
         controllerTile = GameObject.Find("BG_Field").GetComponent<Controller_Tile>();
+        controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
+        anim = gameObject.GetComponent<Animation>();
     }
 
     void Update()
@@ -21,7 +26,7 @@ public class Enemy : MonoBehaviour
         if (target < controllerTile.InvasionRoute.Count - 1) 
             CheckNextTile();
         Vector2 targetVec = controllerTile.InvasionRoute[target].transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, targetVec, speed);
+        transform.position = Vector3.MoveTowards(transform.position, targetVec, Time.deltaTime * speed);
     }
 
     int CheckNextTile()
@@ -38,8 +43,17 @@ public class Enemy : MonoBehaviour
         return target;
     }
 
-    void Damaged(int _attack)
+    public void Damaged(int _attack)
     {
         hp -= _attack;
+        anim.Play("Damaged");
+
+        // Die
+        if (hp < 0)
+        {
+            controllerEnemy.Enemys.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
+
 }

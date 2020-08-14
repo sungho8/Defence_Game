@@ -8,22 +8,20 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     
-    private TowerStatus t;
+    private TowerStatus ts;
     private Controller_Enemy c;
-    private GameObject canvas;
     private float time = 0;
 
     private void Awake()
     {
-        t = GetComponent<TowerStatus>();
+        ts = GetComponent<TowerStatus>();
         c = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
-        canvas = GameObject.Find("Canvas");
     }
 
     void Update()
     {
         time += Time.deltaTime;
-        if (time > t.attack_speed)
+        if (time > ts.attack_speed)
         {
             if (CheckTarget() != null)
             {
@@ -40,26 +38,34 @@ public class Shoot : MonoBehaviour
         float min = 10f;
         int minIndex = 0;
 
-        for (int i = 0; i < c.Enemys.Count; i++)
+        if (c.Enemys.Count != 0) 
         {
-            offset = c.Enemys[i].transform.position - transform.position;
-
-            if(min > offset.sqrMagnitude)
+            for (int i = 0; i < c.Enemys.Count; i++)
             {
-                min = offset.sqrMagnitude;
-                minIndex = i;
+                offset = c.Enemys[i].transform.position - transform.position;
+
+                if (min > offset.sqrMagnitude)
+                {
+                    min = offset.sqrMagnitude;
+                    minIndex = i;
+                }
             }
+            return c.Enemys[minIndex];
         }
-        return c.Enemys[minIndex];
+        else
+        {
+            return null;
+        }
     }
 
     // 총알 생성
     void ShootBullet(GameObject _target)
     {
         GameObject temp = Instantiate(bullet, transform.position, Quaternion.identity);
-        temp.transform.SetParent(canvas.transform);
-        temp.transform.localScale = new Vector2(60f, 60f);
-        temp.GetComponent<Bullet>().target = _target;
-        temp.GetComponent<Bullet>().attack = t.attack;
+        temp.transform.localScale = new Vector2(0.5f, 0.5f);
+
+        Bullet bul = temp.GetComponent<Bullet>();
+        bul.target = _target;
+        bul.attack = ts.attack;
     }
 }

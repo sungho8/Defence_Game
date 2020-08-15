@@ -8,17 +8,20 @@ public class Controller_Enemy : MonoBehaviour
     public List<GameObject> Enemys;
     public GameObject EnemyObject;
 
+    private GameObject temp;
     private float time = 0;
     private float delay = 1f;
+    
 
     private void Update()
     {
         time += Time.deltaTime;
 
-        if(time < 1000f)
+        if(time > 1f)
         {
             time = 0;
-            Instantiate(EnemyObject,Sponer.transform.position,Quaternion.identity);
+            temp = Instantiate(EnemyObject,Sponer.transform.position,Quaternion.identity);
+            Enemys.Add(temp);
         }
     }
 }

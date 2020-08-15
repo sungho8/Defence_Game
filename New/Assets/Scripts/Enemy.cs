@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public float speed = 0.1f;
     public int hp = 10;
 
-    private int target = 0;
+    public int target = 0;
 
     void Awake()
     {
@@ -32,9 +32,7 @@ public class Enemy : MonoBehaviour
     int CheckNextTile()
     {
         float closed = 0.001f;
-        Vector2 offset;
-        
-        offset = controllerTile.InvasionRoute[target].transform.position - transform.position;
+        Vector2 offset = controllerTile.InvasionRoute[target].transform.position - transform.position;
 
         if (closed > offset.sqrMagnitude)
         {

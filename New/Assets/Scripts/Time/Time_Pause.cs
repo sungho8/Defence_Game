@@ -6,6 +6,7 @@ public class Time_Pause : MonoBehaviour
 {
     public Sprite pause;
     public Sprite unpause;
+    public GameObject pauseCanvas;
 
     Controller_Time ct;
     SpriteRenderer spriteRenderer;
@@ -23,6 +24,7 @@ public class Time_Pause : MonoBehaviour
             ct.isPause = true;
             Time.timeScale = 0f;
             spriteRenderer.sprite = unpause;
+            pauseCanvas.SetActive(true);
         }
         // un-pause
         else
@@ -30,6 +32,7 @@ public class Time_Pause : MonoBehaviour
             ct.isPause = false;
             Time.timeScale = 1f;
             spriteRenderer.sprite = pause;
+            pauseCanvas.SetActive(false);
         }
         
     }

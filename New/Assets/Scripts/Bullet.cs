@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
     {
         if(target != null)
         {
-            transform.Rotate(0, 0, 2f);
+            transform.Rotate(0, 0, Time.deltaTime* 2f);
 
             Vector2 targetVec = target.transform.position;
             transform.position = Vector3.MoveTowards(transform.position, targetVec, speed * Time.deltaTime);
@@ -43,11 +43,8 @@ public class Bullet : MonoBehaviour
         if (target != null && other.gameObject == target)
         {
             GameObject temp = Instantiate(effect, target.transform.position, Quaternion.identity);
-            temp.transform.SetParent(canvas.transform);
-            temp.transform.localScale = new Vector2(70f, 70f);
-
+            temp.transform.localScale = new Vector2(0.5f, 0.5f);
             target.GetComponent<Enemy>().Damaged(attack);
-
             Destroy(this.gameObject);
         }
     }

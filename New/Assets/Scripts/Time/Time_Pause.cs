@@ -31,6 +31,5 @@ public class Time_Pause : MonoBehaviour
             Time.timeScale = 1f;
             spriteRenderer.sprite = pause;
         }
-        
     }
 }

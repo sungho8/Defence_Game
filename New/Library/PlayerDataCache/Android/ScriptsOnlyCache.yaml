@@ -4,12 +4,15 @@ ScriptsOnlyBuild:
     - Bullet
     - Controller_Enemy
     - Controller_Tile
+    - Controller_Time
     - DestroyEffect
     - Enemy
     - PinchZoom
     - Shoot
     - SortingLayerInMeshRenderer
     - SpriteOutline
+    - Time_Pause
+    - Time_x2
     - TowerStatus
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -56,6 +59,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 58
       Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -74,34 +79,42 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11744}
+      Script: {instanceID: 11746}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11874}
     - Class: 114
-      Script: {instanceID: 12012}
+      Script: {instanceID: 11924}
     - Class: 114
-      Script: {instanceID: 12090}
+      Script: {instanceID: 12016}
     - Class: 114
-      Script: {instanceID: 12236}
+      Script: {instanceID: 12094}
     - Class: 114
-      Script: {instanceID: 12308}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12742}
+      Script: {instanceID: 12312}
     - Class: 114
-      Script: {instanceID: 12828}
+      Script: {instanceID: 12746}
     - Class: 114
-      Script: {instanceID: 13770}
+      Script: {instanceID: 12832}
     - Class: 114
-      Script: {instanceID: 13826}
+      Script: {instanceID: 13774}
     - Class: 114
-      Script: {instanceID: 14006}
+      Script: {instanceID: 13830}
     - Class: 114
-      Script: {instanceID: 14418}
+      Script: {instanceID: 14010}
     - Class: 114
-      Script: {instanceID: 14656}
+      Script: {instanceID: 14422}
     - Class: 114
-      Script: {instanceID: 15050}
+      Script: {instanceID: 14660}
+    - Class: 114
+      Script: {instanceID: 14676}
+    - Class: 114
+      Script: {instanceID: 14876}
+    - Class: 114
+      Script: {instanceID: 15058}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -145,6 +158,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: f50bc631c2efe87e3aa2838944f10d8f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Time_Pause
   - hash:
       serializedVersion: 2
       Hash: ee17abc28cc51eb78f8bf4de956b90da
@@ -453,7 +472,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: c7ef0355186e394ae235ce218e335ff2
+      Hash: 87e772628759bc518d144ed9b5584f63
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TowerStatus
@@ -519,7 +538,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 0f7d53f1b7f321d09fb24183e9d1cb17
+      Hash: 662672a04a0a3f973b65ff32d8ec799a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Enemy
@@ -555,7 +574,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 0fdc93b5a51582de20347ad348b86d8c
+      Hash: 08e2050fbce42a534cc3d12b7f01fad3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -567,10 +586,22 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 77015d63bbfed174530742505fe4c059
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Time_x2
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: bd12151c0869545a3308d38babd59f40
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Controller_Time
   - hash:
       serializedVersion: 2
       Hash: a01d7cd1372d550f912f7121e6ebe739

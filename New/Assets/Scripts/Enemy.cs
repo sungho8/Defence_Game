@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         anim.Play("Damaged");
 
         // Die
-        if (hp < 0)
+        if (hp <= 0)
         {
             controllerEnemy.Enemys.Remove(this.gameObject);
             Destroy(this.gameObject);

@@ -54,17 +54,20 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Time\Time_Pause.cs" />
     <Compile Include="Assets\Scripts\SortingLayerInMeshRenderer.cs" />
-    <Compile Include="Assets\Scripts\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Tower\Type\Shoot.cs" />
     <Compile Include="Assets\Scripts\DestroyEffect.cs" />
     <Compile Include="Assets\Scripts\PinchZoom.cs" />
     <Compile Include="Assets\Scripts\Controller_Tile.cs" />
     <Compile Include="Assets\Shaders\SpriteOutline.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerStatus.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Tower\Type\Bullet.cs" />
     <Compile Include="Assets\Scripts\Controller_Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Time\Time_x2.cs" />
     <Compile Include="Assets\Scripts\Time\Controller_Time.cs" />
+    <Compile Include="Assets\Scripts\Controller_Stage.cs" />
+    <Compile Include="Assets\Scripts\Btn\StageStart.cs" />
+    <Compile Include="Assets\Scripts\Btn\Shop.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Shaders\Sprite-Outline.shader" />

@@ -8,11 +8,6 @@ public class Shop : MonoBehaviour
 
     bool isShopOpen = false;
 
-    private void Start()
-    {
-        
-    }
-
     // 스테이지 시작
     void OnMouseUp()
     {

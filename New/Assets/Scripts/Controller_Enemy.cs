@@ -24,7 +24,7 @@ public class Controller_Enemy : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if(time > 1f)
+        if(time > delay)
             SummonEnemy();
     }
 

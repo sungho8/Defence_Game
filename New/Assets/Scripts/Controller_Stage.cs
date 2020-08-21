@@ -19,8 +19,8 @@ public class Controller_Stage : MonoBehaviour
 
     private void SetTextMesh()
     {
-        StageTextUI.GetComponent<TextMesh>().text = "Stage" + Stage;
-        MoneyTextUI.GetComponent<TextMesh>().text = "" + Money;
+        StageTextUI.GetComponent<TextMesh>().text = "Stage " + Stage;
+        MoneyTextUI.GetComponent<TextMesh>().text = Money + "$";
     }
 
     /*

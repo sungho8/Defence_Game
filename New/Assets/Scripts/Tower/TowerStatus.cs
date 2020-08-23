@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TowerStatus : MonoBehaviour
 {
+    public GameObject towerPrefab;
+
+    public string currentState; // Shop : 상점 , Hand : 핸드, Field : 전투중 타워
+    public string towerName;
     public string element;
     public string type;
 
@@ -14,5 +18,5 @@ public class TowerStatus : MonoBehaviour
     private GameObject target;
 
     // 상점
-    //int cost = 1;
+    public int cost = 1;
 }

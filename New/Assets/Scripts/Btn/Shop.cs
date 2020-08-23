@@ -8,18 +8,18 @@ public class Shop : MonoBehaviour
 
     bool isShopOpen = false;
 
-    // 스테이지 시작
+    // 상점 열기
     void OnMouseUp()
     {
         if(isShopOpen == false)
         {
             isShopOpen = true;
-            ShopUI.transform.localPosition = new Vector3(0, 475, 0);
+            ShopUI.transform.localPosition = new Vector3(0, 200, 0);
         }
         else
         {
             isShopOpen = false;
-            ShopUI.transform.localPosition = new Vector3(0, 1000, 0);
+            ShopUI.transform.localPosition = new Vector3(-3200, 1000, 0);
         }
     }
 }

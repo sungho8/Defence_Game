@@ -4,6 +4,8 @@ ScriptsOnlyBuild:
     - Bullet
     - CameraMove
     - Controller_Enemy
+    - Controller_Hand
+    - Controller_Shop
     - Controller_Stage
     - Controller_Tile
     - Controller_Time
@@ -12,11 +14,14 @@ ScriptsOnlyBuild:
     - PinchZoom
     - Shoot
     - Shop
+    - ShopBuyBtn
     - SortingLayerInMeshRenderer
     - SpriteOutline
     - StageStart
+    - Storage_Tower
     - Time_Pause
     - Time_x2
+    - TowerDrag
     - TowerStatus
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -86,47 +91,57 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11746}
+      Script: {instanceID: 11760}
     - Class: 114
-      Script: {instanceID: 11874}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 11924}
+      Script: {instanceID: 11938}
     - Class: 114
-      Script: {instanceID: 12016}
-    - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12030}
     - Class: 114
       Script: {instanceID: 12096}
     - Class: 114
-      Script: {instanceID: 12242}
+      Script: {instanceID: 12110}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12228}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 12258}
     - Class: 114
-      Script: {instanceID: 12834}
+      Script: {instanceID: 12330}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 12764}
     - Class: 114
-      Script: {instanceID: 13622}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 13782}
+      Script: {instanceID: 13592}
     - Class: 114
-      Script: {instanceID: 13838}
+      Script: {instanceID: 13640}
+    - Class: 114
+      Script: {instanceID: 13800}
+    - Class: 114
+      Script: {instanceID: 13856}
     - Class: 114
       Script: {instanceID: 14018}
     - Class: 114
-      Script: {instanceID: 14430}
+      Script: {instanceID: 14038}
     - Class: 114
-      Script: {instanceID: 14668}
+      Script: {instanceID: 14450}
     - Class: 114
-      Script: {instanceID: 14684}
+      Script: {instanceID: 14688}
     - Class: 114
-      Script: {instanceID: 14864}
+      Script: {instanceID: 14704}
     - Class: 114
-      Script: {instanceID: 14886}
+      Script: {instanceID: 14884}
     - Class: 114
-      Script: {instanceID: 15068}
+      Script: {instanceID: 14906}
+    - Class: 114
+      Script: {instanceID: 15088}
+    - Class: 114
+      Script: {instanceID: 33748}
+    - Class: 114
+      Script: {instanceID: 42540}
+    - Class: 114
+      Script: {instanceID: 59458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -272,6 +287,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 5ebe13990acd6367fa3b933d0e7b540b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Storage_Tower
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -469,6 +490,12 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
+    className: Controller_Tower
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
     className: StageStart
   - hash:
       serializedVersion: 2
@@ -496,7 +523,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 87e772628759bc518d144ed9b5584f63
+      Hash: 614e8fe3126a17e82cc1b4827a9a8a32
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TowerStatus
@@ -542,6 +569,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
     className: SpriteLibraryAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 02ecea23b497d4169fdea0461fa27017
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Controller_Shop
   - hash:
       serializedVersion: 2
       Hash: 87ad3705a58f19c47136728d4a6e9c47
@@ -728,6 +761,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f450bd92c660880e07a6cb4e4f93cd6d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShopBuyBtn
+  - hash:
+      serializedVersion: 2
+      Hash: 1f95af2a4e3476354674ab07f217ca1c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Controller_Hand
+  - hash:
+      serializedVersion: 2
+      Hash: 94706bb59f021d2a133e22688814e0fc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TowerDrag
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Controller_Hand : MonoBehaviour
 {
-    public GameObject[] handSlots;
+    public GameObject[] handSlots;  // 핸드 자리 10개
 
-    public GameObject[] towers;
+    public GameObject[] towers;     // 각 핸드에있는 타워, 빈자리는 null
 
     void Start()
     {
@@ -29,8 +29,6 @@ public class Controller_Hand : MonoBehaviour
     public void setPurchasedTower(GameObject tower)
     {
         int empty = checkEmpty();
-
-        Debug.Log(empty);
 
         GameObject purchasedTower = Instantiate(tower, handSlots[empty].transform.position, Quaternion.identity);
         purchasedTower.transform.SetParent(transform);

@@ -35,6 +35,7 @@ public class Controller_Enemy : MonoBehaviour
         {
             time = 0;
             temp = Instantiate(EnemyObject, Sponer.transform.position, Quaternion.identity);
+            temp.GetComponent<Enemy>().hp = 10 * controllerStage.Stage;
             Enemys.Add(temp);
 
             RemainingEnemyCount--;

@@ -8,26 +8,29 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     
-    private TowerStatus ts;
+    private TowerStatus towerStatus;
     private Controller_Enemy c;
     private float time = 0;
 
     private void Awake()
     {
-        ts = GetComponent<TowerStatus>();
+        towerStatus = GetComponent<TowerStatus>();
         c = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
     }
 
     void Update()
     {
-        time += Time.deltaTime;
-        if (time > ts.attack_speed)
+        if(towerStatus.currentState == "Field")
         {
-            if (CheckTarget() != null)
+            time += Time.deltaTime;
+            if (time > towerStatus.attack_speed)
             {
-                ShootBullet(CheckTarget());
+                if (CheckTarget() != null)
+                {
+                    ShootBullet(CheckTarget());
+                }
+                time = 0;
             }
-            time = 0;
         }
     }
 
@@ -38,7 +41,7 @@ public class Shoot : MonoBehaviour
         float min = 10f;
         int minIndex = 0;
 
-        if (c.Enemys.Count != 0) 
+        if (c.Enemys.Count != 0)
         {
             for (int i = 0; i < c.Enemys.Count; i++)
             {
@@ -66,6 +69,6 @@ public class Shoot : MonoBehaviour
 
         Bullet bul = temp.GetComponent<Bullet>();
         bul.target = _target;
-        bul.attack = ts.attack;
+        bul.attack = towerStatus.attack;
     }
 }

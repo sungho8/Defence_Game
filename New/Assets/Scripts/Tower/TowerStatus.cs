@@ -14,6 +14,7 @@ public class TowerStatus : MonoBehaviour
     public int attack;
     public float attack_speed;
     public int direction;
+    public int grade;
 
     private GameObject target;
 

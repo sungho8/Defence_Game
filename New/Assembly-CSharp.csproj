@@ -59,25 +59,25 @@
     <Compile Include="Assets\Scripts\SortingLayerInMeshRenderer.cs" />
     <Compile Include="Assets\Scripts\Tower\Type\Shoot.cs" />
     <Compile Include="Assets\Scripts\Controller_Stage.cs" />
-    <Compile Include="Assets\Scripts\DestroyEffect.cs" />
+    <Compile Include="Assets\Scripts\Effect\DestroyEffect.cs" />
     <Compile Include="Assets\Scripts\Storage_Tower.cs" />
     <Compile Include="Assets\Scripts\PinchZoom.cs" />
     <Compile Include="Assets\Scripts\Controller_Tile.cs" />
+    <Compile Include="Assets\Scripts\Btn\ShopBuyBtn.cs" />
     <Compile Include="Assets\Shaders\SpriteOutline.cs" />
     <Compile Include="Assets\Scripts\Controller_Tower.cs" />
     <Compile Include="Assets\Scripts\Btn\StageStart.cs" />
     <Compile Include="Assets\Scripts\Btn\CameraMove.cs" />
+    <Compile Include="Assets\Scripts\Tower\TowerDrag.cs" />
     <Compile Include="Assets\Scripts\Tower\TowerStatus.cs" />
     <Compile Include="Assets\Scripts\Tower\Type\Bullet.cs" />
     <Compile Include="Assets\Scripts\Controller_Shop.cs" />
     <Compile Include="Assets\Scripts\Controller_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Controller_Hand.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Time\Time_x2.cs" />
     <Compile Include="Assets\Scripts\Btn\Shop.cs" />
     <Compile Include="Assets\Scripts\Time\Controller_Time.cs" />
-    <Compile Include="Assets\Scripts\Btn\ShopBuyBtn.cs" />
-    <Compile Include="Assets\Scripts\Controller_Hand.cs" />
-    <Compile Include="Assets\Scripts\TowerDrag.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Shaders\Sprite-Outline.shader" />

@@ -62,6 +62,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 50
@@ -91,57 +93,57 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11760}
+      Script: {instanceID: 11746}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11874}
     - Class: 114
-      Script: {instanceID: 11938}
+      Script: {instanceID: 11924}
     - Class: 114
-      Script: {instanceID: 12030}
+      Script: {instanceID: 12016}
+    - Class: 114
+      Script: {instanceID: 12082}
     - Class: 114
       Script: {instanceID: 12096}
     - Class: 114
-      Script: {instanceID: 12110}
+      Script: {instanceID: 12214}
     - Class: 114
-      Script: {instanceID: 12228}
+      Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 12258}
+      Script: {instanceID: 12316}
     - Class: 114
-      Script: {instanceID: 12330}
+      Script: {instanceID: 12542}
     - Class: 114
-      Script: {instanceID: 12764}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 12838}
     - Class: 114
-      Script: {instanceID: 13592}
+      Script: {instanceID: 13580}
     - Class: 114
-      Script: {instanceID: 13640}
+      Script: {instanceID: 13628}
     - Class: 114
-      Script: {instanceID: 13800}
+      Script: {instanceID: 13752}
     - Class: 114
-      Script: {instanceID: 13856}
+      Script: {instanceID: 13790}
     - Class: 114
-      Script: {instanceID: 14018}
+      Script: {instanceID: 13846}
     - Class: 114
-      Script: {instanceID: 14038}
+      Script: {instanceID: 14008}
     - Class: 114
-      Script: {instanceID: 14450}
+      Script: {instanceID: 14028}
     - Class: 114
-      Script: {instanceID: 14688}
+      Script: {instanceID: 14440}
     - Class: 114
-      Script: {instanceID: 14704}
+      Script: {instanceID: 14596}
     - Class: 114
-      Script: {instanceID: 14884}
+      Script: {instanceID: 14680}
     - Class: 114
-      Script: {instanceID: 14906}
+      Script: {instanceID: 14696}
     - Class: 114
-      Script: {instanceID: 15088}
+      Script: {instanceID: 14876}
     - Class: 114
-      Script: {instanceID: 33748}
+      Script: {instanceID: 14898}
     - Class: 114
-      Script: {instanceID: 42540}
-    - Class: 114
-      Script: {instanceID: 59458}
+      Script: {instanceID: 15080}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -149,6 +151,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -241,7 +247,7 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: 9577e3a9e20b331b7ce2ecade9b64f40
+      Hash: eff3f421858c629d50357f230c5f2409
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Stage
@@ -289,7 +295,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 5ebe13990acd6367fa3b933d0e7b540b
+      Hash: 3bdec51c45282f99c184a2e70d6a3e11
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Storage_Tower
@@ -325,7 +331,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 6aafdbcf86a59b2887e7b58c3ebf147e
+      Hash: 683ce9ac468d2624535d51097666d446
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Tile
@@ -383,6 +389,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.PixelPerfect.dll
     namespaceName: UnityEngine.U2D
     className: PixelPerfectCamera
+  - hash:
+      serializedVersion: 2
+      Hash: f450bd92c660880e07a6cb4e4f93cd6d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShopBuyBtn
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -517,13 +529,19 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: f450bd92c660880e07a6cb4e4f93cd6d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TowerDrag
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 614e8fe3126a17e82cc1b4827a9a8a32
+      Hash: 9080cf4b16975e44c8976f4f7fc1b51b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TowerStatus
@@ -571,7 +589,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: 02ecea23b497d4169fdea0461fa27017
+      Hash: 1c4c35683db17cd408f508841e649fc4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Shop
@@ -629,6 +647,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 1f95af2a4e3476354674ab07f217ca1c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Controller_Hand
   - hash:
       serializedVersion: 2
       Hash: 08e2050fbce42a534cc3d12b7f01fad3
@@ -761,24 +785,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: f450bd92c660880e07a6cb4e4f93cd6d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ShopBuyBtn
-  - hash:
-      serializedVersion: 2
-      Hash: 1f95af2a4e3476354674ab07f217ca1c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Controller_Hand
-  - hash:
-      serializedVersion: 2
-      Hash: 94706bb59f021d2a133e22688814e0fc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TowerDrag
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity

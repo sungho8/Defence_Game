@@ -33,6 +33,7 @@ public class Controller_Hand : MonoBehaviour
         GameObject purchasedTower = Instantiate(tower, handSlots[empty].transform.position, Quaternion.identity);
         purchasedTower.transform.SetParent(transform);
         purchasedTower.transform.localScale = new Vector2(1.7f, 1.7f);
+        purchasedTower.GetComponent<TowerDrag>().index = -2 - empty;
 
         towers[empty] = purchasedTower;
 

@@ -53,7 +53,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f39639f98f18e4286649ade5df4a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initMousePos: {x: 0, y: 0, z: 0}
 --- !u!114 &479280541993167024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,8 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 0}
-  currentState: 
-  towerName: 
+  currentState: Hand
+  towerName: "\uD654\uC5FC\uAD6C"
   element: Fire
   type: Shoot
   attack: 5

@@ -76,7 +76,6 @@ public class Controller_Shop : MonoBehaviour
                 controllerStage.Money -= towerCost;
 
                 // 구매한 상점은 SoldOut 처리
-                Debug.Log(shopTower.name);
                 Destroy(shopTower);
                 GameObject sold = Instantiate(soldOut, shopSlots[slotIndex].transform.position, Quaternion.identity);
                 sold.transform.SetParent(shopSlots[slotIndex].transform);

@@ -30,7 +30,7 @@ public class Time_Pause : MonoBehaviour
         else
         {
             ct.isPause = false;
-            Time.timeScale = 1f;
+            Time.timeScale = ct.isFastSpeed ? 2f : 1f;  // 원래속도 복구
             spriteRenderer.sprite = pause;
             pauseCanvas.SetActive(false);
         }

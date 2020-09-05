@@ -14,7 +14,7 @@ public class Shop : MonoBehaviour
         if(isShopOpen == false)
         {
             isShopOpen = true;
-            ShopUI.transform.localPosition = new Vector3(0, 200, 0);
+            ShopUI.transform.localPosition = new Vector3(0, Screen.height / 2, 0);
         }
         else
         {

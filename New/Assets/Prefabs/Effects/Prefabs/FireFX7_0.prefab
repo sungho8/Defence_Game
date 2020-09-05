@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4411176910955536}
   - component: {fileID: 212931698438156192}
+  - component: {fileID: 693576203844903375}
   - component: {fileID: 95652461656392586}
   m_Layer: 0
   m_Name: FireFX7_0
@@ -83,6 +84,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &693576203844903375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214030503394322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61daa2c1e85c1ea42819c1eb43298ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &95652461656392586
 Animator:
   serializedVersion: 3

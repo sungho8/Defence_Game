@@ -278,7 +278,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -361,7 +361,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -483,11 +483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811a6e326297fa8469eb2afefd0878d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerTower: {fileID: 0}
   TowerList:
   - {fileID: 807528763512799687, guid: 510a93c50a28437439303771cac48f1d, type: 3}
-  Tower_Shop: []
-  Tower_Hand: []
-  Tower_Field: []
 --- !u!4 &102838838
 Transform:
   m_ObjectHideFlags: 0
@@ -699,7 +697,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -782,7 +780,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -856,7 +854,6 @@ MonoBehaviour:
   - {fileID: 221648084}
   - {fileID: 1215337275}
   - {fileID: 548627934}
-  towers: []
 --- !u!1 &150647218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1009,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1129,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262695345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 590473913}
@@ -1658,7 +1655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399795827}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1975323294}
@@ -1934,6 +1931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 455641473}
   - component: {fileID: 455641474}
+  - component: {fileID: 455641478}
   - component: {fileID: 455641477}
   - component: {fileID: 455641476}
   - component: {fileID: 455641475}
@@ -2047,7 +2045,6 @@ MonoBehaviour:
   - {fileID: 1080353763}
   - {fileID: 421574062}
   - {fileID: 2069617703}
-  ArrangedTower: []
   Tile: []
   StartTile: {fileID: 1189149736}
   EndTile: {fileID: 1471761708}
@@ -2086,6 +2083,19 @@ MonoBehaviour:
   MoneyTextUI: {fileID: 1516967035}
   isStart: 0
   Stage: 1
+--- !u!114 &455641478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455641472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03741887271b2f43823838be34cee6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effect: {fileID: 1484242021600728, guid: ab4b007406da1c048ab76a0d75130ada, type: 3}
 --- !u!1 &464638378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,8 +2204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471906645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1889, z: 0}
-  m_LocalScale: {x: 160, y: 160, z: 0}
+  m_LocalPosition: {x: 0, y: 1474, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 0}
   m_Children:
   - {fileID: 262695346}
   - {fileID: 399795828}
@@ -2277,12 +2287,6 @@ MonoBehaviour:
   - {fileID: 985133701}
   - {fileID: 1572356339}
   - {fileID: 507928878}
-  shopSlotTowers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   slotName:
   - {fileID: 1092639155}
   - {fileID: 688298241}
@@ -2610,7 +2614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507928878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalPosition: {x: 6, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 812770542}
@@ -2924,7 +2928,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14324,7 +14328,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14495,7 +14499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985133701}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 559874009}
@@ -15772,7 +15776,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16336,7 +16340,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17179,7 +17183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572356339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1646923558}
@@ -17517,7 +17521,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8359661988393023892, guid: b6a4e97b8b9b07e49ac4ab34b085b17b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

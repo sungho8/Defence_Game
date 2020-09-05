@@ -5,7 +5,6 @@ using UnityEngine;
 public class Controller_Tile : MonoBehaviour
 {
     public List<GameObject> InvasionRoute;  // 공격로
-    public List<GameObject> ArrangedTower;  // 배치된 타워들
     public List<GameObject> Tile;           // 모든 타일
 
     public GameObject StartTile;
@@ -15,17 +14,19 @@ public class Controller_Tile : MonoBehaviour
     public GameObject EndHand;
 
     private Controller_Hand controllerHand;
+    private Storage_Tower storageTower;
     private readonly int tileCount = 45;
 
     private void Awake()
     {
+        storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
+        controllerHand = GameObject.Find("Hand").GetComponent<Controller_Hand>();
+        
         // Init All Tile
         for (int i = 1; i <= tileCount; i++)
         {
             Tile.Add(GameObject.Find("Tile" + i));
-            ArrangedTower.Add(null);
         }
-        controllerHand = GameObject.Find("Hand").GetComponent<Controller_Hand>();
     }
 
     // 해당타일이 공격로인지 확인
@@ -49,14 +50,12 @@ public class Controller_Tile : MonoBehaviour
         float min = 10f;
 
         // 필드 안
-        if(t.position.x > StartTile.transform.position.x && t.position.x < EndTile.transform.position.x &&
-            t.position.y < StartTile.transform.position.y && t.position.y > EndTile.transform.position.y)
+        if(IsField(t))
         {
             for (int i = 0; i < Tile.Count; i++)
             {
                 offset = Tile[i].transform.position - t.position;
-
-                if (min > offset.sqrMagnitude && CheckInvasionRoute(Tile[i]) && ArrangedTower[i] == null)
+                if (min > offset.sqrMagnitude && CheckInvasionRoute(Tile[i]) && storageTower.Tower_Field[i] == null)
                 {
                     min = offset.sqrMagnitude;
                     result = i;
@@ -64,14 +63,11 @@ public class Controller_Tile : MonoBehaviour
             }
         }
         // 핸드영역
-        else if(t.position.x > StartHand.transform.position.x && t.position.x < EndHand.transform.position.x &&
-        t.position.y < StartHand.transform.position.y && t.position.y > EndHand.transform.position.y)
+        else if(IsHand(t))
         {
-           
             for (int i = 0; i < controllerHand.handSlots.Length; i++)
             {
                 offset = controllerHand.handSlots[i].transform.position - t.position;
-
                 if (min > offset.sqrMagnitude)
                 {
                     min = offset.sqrMagnitude;
@@ -81,4 +77,29 @@ public class Controller_Tile : MonoBehaviour
         }
         return result;
     }
+
+    bool IsField(Transform t)
+    {
+        float StartX = StartTile.transform.position.x - 1;
+        float StartY = StartTile.transform.position.y + 1;
+        float EndX = EndTile.transform.position.x + 1;
+        float EndY = EndTile.transform.position.y - 1;
+
+        if (t.position.x > StartX && t.position.x < EndX && t.position.y < StartY && t.position.y > EndY){
+            return true;
+        }
+        return false;
+    }
+    bool IsHand(Transform t)
+    {
+        float StartX = StartHand.transform.position.x - 1;
+        float StartY = StartHand.transform.position.y + 1;
+        float EndX = EndHand.transform.position.x + 1;
+        float EndY = EndHand.transform.position.y - 1;
+
+        if (t.position.x > StartX && t.position.x < EndX && t.position.y < StartY && t.position.y > EndY){
+            return true;
+        }
+        return false;
+    } 
 }

@@ -6,6 +6,6 @@ public class DestroyEffect : MonoBehaviour
 {
     void EndDestroy()
     {
-        Destroy(this.gameObject, 1);
+        Destroy(this.gameObject, 0.3f);
     }
 }

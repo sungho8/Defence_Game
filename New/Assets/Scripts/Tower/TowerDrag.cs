@@ -7,6 +7,7 @@ public class TowerDrag : MonoBehaviour
     Vector3 initMousePos;
     Vector3 originPos;
 
+    Storage_Tower storageTower;
     Controller_Tile controllerTile;
     Controller_Stage controllerStage;
     Controller_Hand controllerHand;
@@ -20,6 +21,8 @@ public class TowerDrag : MonoBehaviour
         controllerTile = GameObject.Find("BG_Field").GetComponent<Controller_Tile>();
         controllerStage = GameObject.Find("BG_Field").GetComponent<Controller_Stage>();
         controllerHand = GameObject.Find("Hand").GetComponent<Controller_Hand>();
+        storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
+
         arrangeEffect = GameObject.Find("arrangeEffect");
         towerStatus = GetComponent<TowerStatus>();
     }
@@ -38,12 +41,12 @@ public class TowerDrag : MonoBehaviour
             // 이미 배치되어있는 타워일경우 (- 일경우 아직 배치되지 않은 타워)
             if (index >= 0)
             {
-                controllerTile.ArrangedTower[index] = null;
+                storageTower.Tower_Field[index] = null;
                 index = -1;
             }
             else if(index < -1)
             {
-                controllerHand.towers[-1 * index - 2] = null;
+                storageTower.Tower_Hand[-1 * index - 2] = null;
             }
         }
     }
@@ -88,7 +91,7 @@ public class TowerDrag : MonoBehaviour
                 arrangeEffect.transform.position = new Vector3(0, 3000, 0);         // 이펙트 멀리멀리
                 transform.position = controllerTile.Tile[index].transform.position; // 타워 배치
                 towerStatus.currentState = "Field";
-                controllerTile.ArrangedTower[index] = this.gameObject;
+                storageTower.Tower_Field[index] = this.gameObject;
             }
             // 핸드 배치
             else if (index < -1)
@@ -96,7 +99,7 @@ public class TowerDrag : MonoBehaviour
                 arrangeEffect.transform.position = new Vector3(0, 3000, 0);         // 이펙트 멀리멀리
                 transform.position = controllerHand.handSlots[-1 * index - 2].transform.position;
                 towerStatus.currentState = "Hand";
-                controllerHand.towers[-1 * index - 2] = this.gameObject;
+                storageTower.Tower_Hand[-1 * index - 2] = this.gameObject;
             }
             else
             {
@@ -110,18 +113,18 @@ public class TowerDrag : MonoBehaviour
     void Test()
     {
         string s = "Field : ";
-        for (int i = 0; i < controllerTile.ArrangedTower.Count; i++)
+        for (int i = 0; i < storageTower.Tower_Field.Count; i++)
         {
-            if (controllerTile.ArrangedTower[i] != null)
-                s += i + " " + controllerTile.ArrangedTower[i].name + ", ";
+            if (storageTower.Tower_Field[i] != null)
+                s += i + " " + storageTower.Tower_Field[i].name + ", ";
         }
         Debug.Log(s);
 
         string s2 = "Hand : ";
-        for(int i =0; i < controllerHand.towers.Length; i++)
+        for(int i =0; i < storageTower.Tower_Hand.Count; i++)
         {
-            if (controllerHand.towers[i] != null) 
-                s2 += i + " " + controllerHand.towers[i].name + ",";
+            if (storageTower.Tower_Hand[i] != null) 
+                s2 += i + " " + storageTower.Tower_Hand[i].name + ",";
         }
         Debug.Log(s2);
     }

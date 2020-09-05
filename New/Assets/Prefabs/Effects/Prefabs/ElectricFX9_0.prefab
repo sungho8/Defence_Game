@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4601672276734870}
   - component: {fileID: 212632360207994590}
+  - component: {fileID: 1443630673114187192}
   - component: {fileID: 95908861557757384}
   m_Layer: 0
   m_Name: ElectricFX9_0
@@ -83,6 +84,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1443630673114187192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323218017652914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61daa2c1e85c1ea42819c1eb43298ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &95908861557757384
 Animator:
   serializedVersion: 3

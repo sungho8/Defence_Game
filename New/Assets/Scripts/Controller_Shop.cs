@@ -6,11 +6,14 @@ public class Controller_Shop : MonoBehaviour
 {
     Storage_Tower storageTower;
     Controller_Stage controllerStage;
-
+    Controller_Hand controllerHand;
+    Controller_Tower controllerTower;
+    
     public GameObject hand;
-    public GameObject soldOut;
+    public GameObject soldOut;  // sold out sprite
+
+    // shop object
     public GameObject[] shopSlots;
-    public GameObject[] shopSlotTowers;
     public GameObject[] slotName;
     public GameObject[] slotCost;
 
@@ -18,6 +21,8 @@ public class Controller_Shop : MonoBehaviour
     {
         storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
         controllerStage = GameObject.Find("BG_Field").GetComponent<Controller_Stage>();
+        controllerTower = GameObject.Find("BG_Field").GetComponent<Controller_Tower>();
+        controllerHand = hand.GetComponent<Controller_Hand>();
 
         setNewItem();
     }
@@ -47,7 +52,7 @@ public class Controller_Shop : MonoBehaviour
 
             GameObject temp = Instantiate(towers[r], shopSlots[i].transform.position, Quaternion.identity);
             temp.transform.SetParent(shopSlots[i].transform);
-            shopSlotTowers[i] = temp;
+            storageTower.Tower_Shop[i] = temp;
 
             // name
             slotName[i].GetComponent<TextMesh>().text = temp.GetComponent<TowerStatus>().towerName;
@@ -60,12 +65,11 @@ public class Controller_Shop : MonoBehaviour
     void BuyTower(int slotIndex)
     {
         // 이미 구입한 상품은 구입 불가
-        if(shopSlotTowers[slotIndex] != null)
+        if(storageTower.Tower_Shop[slotIndex] != null)
         {
-            Controller_Hand controllerHand = hand.GetComponent<Controller_Hand>();
-            int towerCost = shopSlotTowers[slotIndex].GetComponent<TowerStatus>().cost;
+            int towerCost = storageTower.Tower_Shop[slotIndex].GetComponent<TowerStatus>().cost;
             // 핸드 자리 있는지 체크 & 돈 확인
-            if (controllerHand.checkEmpty() != controllerHand.towers.Length && controllerStage.Money >= towerCost)
+            if (controllerHand.checkEmpty() != storageTower.Tower_Hand.Count && controllerStage.Money >= towerCost)
             {
                 GameObject shopTower = shopSlots[slotIndex].transform.GetChild(3).gameObject;
                 TowerStatus status = shopTower.GetComponent<TowerStatus>();
@@ -79,7 +83,7 @@ public class Controller_Shop : MonoBehaviour
                 Destroy(shopTower);
                 GameObject sold = Instantiate(soldOut, shopSlots[slotIndex].transform.position, Quaternion.identity);
                 sold.transform.SetParent(shopSlots[slotIndex].transform);
-                shopSlotTowers[slotIndex] = null;
+                storageTower.Tower_Shop[slotIndex] = null;
             }
         }
     }

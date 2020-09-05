@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873406115471802}
   - component: {fileID: 212718313991680532}
+  - component: {fileID: -4243404059371648328}
   - component: {fileID: 95578542465400706}
   m_Layer: 0
   m_Name: SmokeFX9_0
@@ -83,6 +84,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4243404059371648328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669764884090756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61daa2c1e85c1ea42819c1eb43298ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &95578542465400706
 Animator:
   serializedVersion: 3

@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerStatus : MonoBehaviour
 {
     public GameObject towerPrefab;
+    public Sprite[] rateSprite;
 
     public string currentState; // Shop : 상점 , Hand : 핸드, Field : 전투중 타워
     public string towerName;
@@ -14,10 +15,21 @@ public class TowerStatus : MonoBehaviour
     public int attack;
     public float attack_speed;
     public int direction;
-    public int grade;
 
-    private GameObject target;
-
+    public int grade = 0;
     // 상점
     public int cost = 1;
+
+    public void DestroyTower()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void UpgradeTower()
+    {
+        grade++;
+        this.gameObject.tag = "UpgradeTower";
+        transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = rateSprite[grade];
+        attack *= 2;
+    }
 }

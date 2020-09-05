@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Controller_Hand : MonoBehaviour
 {
-    public GameObject[] handSlots;  // 핸드 자리 10개
+    Storage_Tower storageTower;
 
-    public GameObject[] towers;     // 각 핸드에있는 타워, 빈자리는 null
+    public GameObject[] handSlots;  // 핸드 자리 10개
 
     void Start()
     {
-        towers = new GameObject[10];
+        storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
     }
 
     public int checkEmpty()
     {
-        for (int i = 0; i < towers.Length; i++) 
+        for (int i = 0; i < storageTower.Tower_Hand.Count; i++) 
         {
-            if(towers[i] == null)
+            if(storageTower.Tower_Hand[i] == null)
             {
                 return i;
             }
         }
         // 10 = 꽉찼다
-        return towers.Length;
+        return storageTower.Tower_Hand.Count;
     }
 
     public void setPurchasedTower(GameObject tower)
@@ -35,7 +35,7 @@ public class Controller_Hand : MonoBehaviour
         purchasedTower.transform.localScale = new Vector2(1.7f, 1.7f);
         purchasedTower.GetComponent<TowerDrag>().index = -2 - empty;
 
-        towers[empty] = purchasedTower;
+        storageTower.Tower_Hand[empty] = purchasedTower;
 
         handSlots[empty].GetComponent<SpriteRenderer>().color = new Color(255,255,255,0);
     }

@@ -6,6 +6,7 @@ public class Controller_Stage : MonoBehaviour
 {
     public GameObject StageTextUI;
     public GameObject MoneyTextUI;
+    public GameObject HpTextUI;
 
     Controller_Shop controllerShop;
 
@@ -18,6 +19,13 @@ public class Controller_Stage : MonoBehaviour
         set { money = value; SetTextMesh(); } 
     }
 
+    int hp = 5;
+    public int HP
+    {
+        get { return hp; }
+        set { hp = value; SetTextMesh(); }
+    }
+
     private void Start()
     {
         SetTextMesh();
@@ -28,6 +36,7 @@ public class Controller_Stage : MonoBehaviour
     {
         StageTextUI.GetComponent<TextMesh>().text = "Stage " + Stage;
         MoneyTextUI.GetComponent<TextMesh>().text = Money + "$";
+        //HpTextUI.GetComponent<TextMesh>().text = "";
     }
 
     /*

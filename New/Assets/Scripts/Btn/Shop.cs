@@ -7,6 +7,12 @@ public class Shop : MonoBehaviour
     public GameObject ShopUI;
 
     bool isShopOpen = false;
+    Vector3 Point;
+
+    private void Start()
+    {
+        Point = GameObject.Find("ShopPoint").transform.localPosition;
+    }
 
     // 상점 열기
     void OnMouseUp()
@@ -14,7 +20,7 @@ public class Shop : MonoBehaviour
         if(isShopOpen == false)
         {
             isShopOpen = true;
-            ShopUI.transform.localPosition = new Vector3(0, Screen.height / 2, 0);
+            ShopUI.transform.localPosition = Point;
         }
         else
         {

@@ -18,7 +18,7 @@ public class Controller_Tower : MonoBehaviour
     void InitDictionary()
     {
         dictionary = new Dictionary<string, int>();
-        for (int i =0; i < storageTower.TowerList.Count; i++)
+        for (int i = 0; i < storageTower.TowerList.Count; i++)
         {
             string towerName = storageTower.TowerList[i].GetComponent<TowerStatus>().towerName;
             dictionary.Add(towerName, 0);

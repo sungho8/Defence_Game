@@ -28,7 +28,7 @@ public class TowerStatus : MonoBehaviour
     public void UpgradeTower()
     {
         grade++;
-        this.gameObject.tag = "UpgradeTower";
+        this.gameObject.name = (grade+1) + name;
         transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = rateSprite[grade];
         attack *= 2;
     }

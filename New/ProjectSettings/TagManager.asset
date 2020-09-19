@@ -8,7 +8,6 @@ TagManager:
   - SoldOutEffect
   - ShopSprite
   - Tower
-  - UpgradeTower
   layers:
   - Default
   - TransparentFX

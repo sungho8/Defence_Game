@@ -30,7 +30,6 @@ public class Controller_Tower : MonoBehaviour
 
         GameObject[] towerArr = GameObject.FindGameObjectsWithTag("Tower");
         
-
         if (towerArr.Length == 0)
             return;
 
@@ -65,8 +64,6 @@ public class Controller_Tower : MonoBehaviour
 
 
         // 재료 타워
-        // 1초동안 연해짐
-        // 1초뒤 Destroy
         uTower[1].GetComponent<TowerStatus>().DestroyTower();
         uTower[2].GetComponent<TowerStatus>().DestroyTower();
     }

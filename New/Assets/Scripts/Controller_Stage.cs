@@ -36,7 +36,7 @@ public class Controller_Stage : MonoBehaviour
     {
         StageTextUI.GetComponent<TextMesh>().text = "Stage " + Stage;
         MoneyTextUI.GetComponent<TextMesh>().text = Money + "$";
-        //HpTextUI.GetComponent<TextMesh>().text = "";
+        HpTextUI.GetComponent<TextMesh>().text = "" + hp;
     }
 
     /*

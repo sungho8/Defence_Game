@@ -21,7 +21,11 @@ public class Controller_Tower : MonoBehaviour
         for (int i = 0; i < storageTower.TowerList.Count; i++)
         {
             string towerName = storageTower.TowerList[i].GetComponent<TowerStatus>().towerName;
-            dictionary.Add(towerName, 0);
+            for (int j = 0; j < 3; j++)
+            {
+                dictionary.Add(j + towerName, 0);
+                Debug.Log("init" + j+towerName);
+            }
         }
     }
 
@@ -29,16 +33,16 @@ public class Controller_Tower : MonoBehaviour
         InitDictionary();
 
         GameObject[] towerArr = GameObject.FindGameObjectsWithTag("Tower");
-        
 
         if (towerArr.Length == 0)
             return;
 
         for (int i = 0; i < towerArr.Length; i++)
         {
+            int grade = towerArr[i].GetComponent<TowerStatus>().grade;
             string towerName = towerArr[i].GetComponent<TowerStatus>().towerName;
-
-            if (++dictionary[towerName] == 3)
+            Debug.Log("towerUpgrade"  + towerName);
+            if (grade < 3 && ++dictionary[grade + towerName] == 3)
             {
                 List<GameObject> uTowers = new List<GameObject>();
                 for (int j = 0; j < towerArr.Length; j++) 

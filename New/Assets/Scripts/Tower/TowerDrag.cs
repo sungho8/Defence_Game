@@ -106,7 +106,7 @@ public class TowerDrag : MonoBehaviour
                 transform.position = originPos;
             }
                 
-            Test();
+            //Test();
         }
     }
 

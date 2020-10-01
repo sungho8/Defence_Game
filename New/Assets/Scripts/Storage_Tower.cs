@@ -25,7 +25,7 @@ public class Storage_Tower : MonoBehaviour
     { 
         get
         {
-            controllerTower.CheckTowerUpgrade();
+            controllerTower.CheckTower();
             return tower_Hand;
         }
     }

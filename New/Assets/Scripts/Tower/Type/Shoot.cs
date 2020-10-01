@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Shoot type Script
+// Magic type Script
 
 public class Shoot : MonoBehaviour
 {

@@ -6,6 +6,11 @@ public class Bullet : MonoBehaviour
 {
     public GameObject target { get; set; }
     public GameObject effect;
+    public int BulletType;
+
+    const int STUN = 0;
+    const int BURN = 1;
+    const int SLOW = 2;
 
     public int attack { get; set; }
     public float speed;
@@ -43,9 +48,23 @@ public class Bullet : MonoBehaviour
         if (target != null && other.gameObject == target)
         {
             GameObject temp = Instantiate(effect, target.transform.position, Quaternion.identity);
+            Enemy enemy = target.GetComponent<Enemy>();
             temp.transform.localScale = new Vector2(0.5f, 0.5f);
-            target.GetComponent<Enemy>().Damaged(attack);
+            enemy.Damaged(attack);
+            
+            if(BulletType == STUN)
+            {
+                enemy.Stun(1f);
+            } 
+
+            if(BulletType == BURN)
+            {
+                enemy.Burn(1f, 10f);
+            }   
+                
+                
             Destroy(this.gameObject);
+
         }
     }
 }

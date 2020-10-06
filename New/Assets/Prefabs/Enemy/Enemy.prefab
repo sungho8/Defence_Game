@@ -99,8 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0edf7d0a6e86d47b2423b5fa9d0f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StunEffect: {fileID: 5258139999123183246, guid: 5ab5021e1e20ab44c86f36668e663dd1,
+    type: 3}
   speed: 1
   hp: 10
+  target: 0
 --- !u!114 &6298573910133159922
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -97,7 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 1140356249160582, guid: e7988ba896094a54cb49da545a6ab92d, type: 3}
-  BulletType: 0
+  BulletType: 2
+  timeType: 1
+  damageType: 0
+  attack: 5
   speed: 5
 --- !u!58 &1632626852684877674
 CircleCollider2D:

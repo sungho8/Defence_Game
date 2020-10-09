@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     float burnDamage = 0;
     float burnTime = 0;
     float stunTime = 0;
+    float slowspeed = 1;
     float slowTime = 0;
 
     void Awake()
@@ -51,7 +52,7 @@ public class Enemy : MonoBehaviour
         if (!StateArr[STUN])
         {
             Vector2 targetVec = controllerTile.InvasionRoute[target].transform.position;
-            transform.position = Vector3.MoveTowards(transform.position, targetVec, Time.deltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position, targetVec, Time.deltaTime * slowspeed * speed);
         }
     }
 
@@ -82,8 +83,22 @@ public class Enemy : MonoBehaviour
         if (StateArr[STUN])
         {
             GameObject e = Instantiate(StunEffect, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-            Destroy(e, 1);
+            Destroy(e, stunTime);
             stunTime--;
+        }
+
+        // Slow
+        if (slowTime <= 0) StateArr[SLOW] = false;
+        if (StateArr[SLOW])
+        {
+            //GameObject e = Instantiate(Effect, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+            //Destroy(e, stunTime);
+            slowspeed = 0.5f;
+            slowTime--;
+        }
+        else
+        {
+            slowspeed = 1f;
         }
     }
 
@@ -111,6 +126,12 @@ public class Enemy : MonoBehaviour
     {
         StateArr[STUN] = true;
         stunTime = t;
+    }
+
+    public void Slow(float t)
+    {
+        StateArr[SLOW] = true;
+        slowTime = t;
     }
 
     void ChangeState(int state,bool b)

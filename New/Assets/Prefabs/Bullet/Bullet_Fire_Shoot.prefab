@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 1526314732346894, guid: e8a902c24167e964e82b3ac5dcbe8b8c, type: 3}
   BulletType: 1
+  timeType: 5
+  damageType: 1
+  attack: 5
   speed: 5
 --- !u!212 &7169021536836798879
 SpriteRenderer:

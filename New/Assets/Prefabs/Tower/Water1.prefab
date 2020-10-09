@@ -162,7 +162,7 @@ MonoBehaviour:
   towerName: "\uBB3C\uBC29\uC6B8"
   element: Water
   type: Magic
-  attack: 3
+  attack: 5
   attack_speed: 1
   direction: 0
   grade: 0

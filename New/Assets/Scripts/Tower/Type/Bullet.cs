@@ -8,19 +8,15 @@ public class Bullet : MonoBehaviour
     public GameObject effect;
     public int BulletType;
 
+    public float timeType;
+    public float damageType;
+
     const int STUN = 0;
     const int BURN = 1;
     const int SLOW = 2;
 
     public int attack { get; set; }
     public float speed;
-
-    private GameObject canvas;
-
-    private void Awake()
-    {
-        canvas = GameObject.Find("Canvas");
-    }
 
     public void setTarget(GameObject _target)
     {
@@ -54,17 +50,20 @@ public class Bullet : MonoBehaviour
             
             if(BulletType == STUN)
             {
-                enemy.Stun(1f);
+                enemy.Stun(timeType);
             } 
 
             if(BulletType == BURN)
             {
-                enemy.Burn(1f, 10f);
+                enemy.Burn(timeType, damageType);
             }   
-                
+
+            if(BulletType == SLOW)
+            {
+                enemy.Slow(timeType);
+            }
                 
             Destroy(this.gameObject);
-
         }
     }
 }

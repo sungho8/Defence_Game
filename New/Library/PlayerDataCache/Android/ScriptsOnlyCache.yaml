@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - Controller_Tile
     - Controller_Time
     - Controller_Tower
+    - DefenceFail
     - DestroyEffect
     - Enemy
     - PinchZoom
@@ -95,61 +96,63 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11746}
+      Script: {instanceID: 11752}
     - Class: 114
-      Script: {instanceID: 11874}
+      Script: {instanceID: 11880}
     - Class: 114
-      Script: {instanceID: 11924}
+      Script: {instanceID: 11930}
     - Class: 114
-      Script: {instanceID: 12016}
+      Script: {instanceID: 12022}
     - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12088}
     - Class: 114
-      Script: {instanceID: 12096}
+      Script: {instanceID: 12102}
     - Class: 114
-      Script: {instanceID: 12214}
+      Script: {instanceID: 12220}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12316}
+      Script: {instanceID: 12322}
     - Class: 114
-      Script: {instanceID: 12542}
+      Script: {instanceID: 12384}
     - Class: 114
-      Script: {instanceID: 12752}
+      Script: {instanceID: 12550}
     - Class: 114
-      Script: {instanceID: 12838}
+      Script: {instanceID: 12760}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 13580}
+      Script: {instanceID: 13582}
     - Class: 114
-      Script: {instanceID: 13628}
+      Script: {instanceID: 13588}
     - Class: 114
-      Script: {instanceID: 13752}
+      Script: {instanceID: 13636}
     - Class: 114
-      Script: {instanceID: 13790}
+      Script: {instanceID: 13760}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13798}
     - Class: 114
-      Script: {instanceID: 14008}
+      Script: {instanceID: 13854}
     - Class: 114
-      Script: {instanceID: 14028}
+      Script: {instanceID: 14016}
     - Class: 114
-      Script: {instanceID: 14440}
+      Script: {instanceID: 14036}
     - Class: 114
-      Script: {instanceID: 14596}
+      Script: {instanceID: 14448}
     - Class: 114
-      Script: {instanceID: 14680}
+      Script: {instanceID: 14604}
     - Class: 114
-      Script: {instanceID: 14696}
+      Script: {instanceID: 14688}
     - Class: 114
-      Script: {instanceID: 14876}
+      Script: {instanceID: 14704}
     - Class: 114
-      Script: {instanceID: 14898}
+      Script: {instanceID: 14884}
     - Class: 114
-      Script: {instanceID: 15080}
+      Script: {instanceID: 14906}
     - Class: 114
-      Script: {instanceID: 26652}
+      Script: {instanceID: 15088}
+    - Class: 114
+      Script: {instanceID: 15180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -251,7 +254,7 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: eff3f421858c629d50357f230c5f2409
+      Hash: 245aaf8529b1d182e830dfa7a183bd0d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Stage
@@ -351,6 +354,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetCamera
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -551,7 +560,7 @@ ScriptsOnlyBuild:
     className: TowerStatus
   - hash:
       serializedVersion: 2
-      Hash: 43c34e1e929a8e7bd1c258afd7e2f7b4
+      Hash: e0fe61fdf7d154217f8bce3d46fe2cd3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -659,7 +668,7 @@ ScriptsOnlyBuild:
     className: Controller_Hand
   - hash:
       serializedVersion: 2
-      Hash: 08e2050fbce42a534cc3d12b7f01fad3
+      Hash: be94a475c9abdc5fcbbd2a4fb8e2ca51
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -785,16 +794,16 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DefenceFail
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SetCamera
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity

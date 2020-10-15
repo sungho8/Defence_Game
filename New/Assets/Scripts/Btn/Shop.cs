@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public GameObject ShopUI;
+    public GameObject ReRollBtn;
 
     bool isShopOpen = false;
     Vector3 Point;
@@ -21,11 +22,13 @@ public class Shop : MonoBehaviour
         {
             isShopOpen = true;
             ShopUI.transform.localPosition = Point;
+            ReRollBtn.transform.localPosition = new Vector3(-2.3f, 0, 0);
         }
         else
         {
             isShopOpen = false;
             ShopUI.transform.localPosition = new Vector3(-3200, 1000, 0);
+            ReRollBtn.transform.localPosition = new Vector3(-3200, 1000, 0);
         }
     }
 }

@@ -47,21 +47,9 @@ public class Bullet : MonoBehaviour
             Enemy enemy = target.GetComponent<Enemy>();
             temp.transform.localScale = new Vector2(0.5f, 0.5f);
             enemy.Damaged(attack);
-            
-            if(BulletType == STUN)
-            {
-                enemy.Stun(timeType);
-            } 
 
-            if(BulletType == BURN)
-            {
-                enemy.Burn(timeType, damageType);
-            }   
-
-            if(BulletType == SLOW)
-            {
-                enemy.Slow(timeType);
-            }
+            // 상태이상
+            if(BulletType != -1) enemy.ChangeState(BulletType, timeType, damageType);
                 
             Destroy(this.gameObject);
         }

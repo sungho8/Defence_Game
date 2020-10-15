@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     // state
     bool[] StateArr;
+    float[] StateTime;
     const int STATE_COUNT = 3;
     const int STUN = 0;
     const int BURN = 1;
@@ -23,14 +24,12 @@ public class Enemy : MonoBehaviour
     float next = 0.0f;
     float delay = 1.0f;
     float burnDamage = 0;
-    float burnTime = 0;
-    float stunTime = 0;
     float slowspeed = 1;
-    float slowTime = 0;
 
     void Awake()
     {
         StateArr = new bool[STATE_COUNT];
+        StateTime = new float[STATE_COUNT];
         controllerTile = GameObject.Find("BG_Field").GetComponent<Controller_Tile>();
         controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
         anim = gameObject.GetComponent<Animation>();
@@ -70,36 +69,32 @@ public class Enemy : MonoBehaviour
 
     void CheckState()
     {
-        // Burn
-        if (burnTime <= 0) StateArr[BURN] = false;
-        if (StateArr[BURN])
+        for(int i =0; i < StateArr.Length; i++)
         {
-            Damaged(burnDamage);
-            burnTime--;
+            if (StateTime[i] <= 0) StateArr[i] = false;
+            if (StateArr[i])
+            {
+                StateTime[i]--;
+
+                if (i == BURN)
+                {
+                    Damaged(burnDamage);
+                }
+                else if(i == STUN)
+                {
+                    GameObject e = Instantiate(StunEffect, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+                    Destroy(e, StateTime[i]);
+                }
+                else if(i == SLOW)
+                {
+                    slowspeed = 0.5f;
+                }
+            }
+
+            if (!StateArr[SLOW]) slowspeed = 1.0f;
         }
 
-        // Stun
-        if (stunTime <= 0) StateArr[STUN] = false;
-        if (StateArr[STUN])
-        {
-            GameObject e = Instantiate(StunEffect, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-            Destroy(e, stunTime);
-            stunTime--;
-        }
-
-        // Slow
-        if (slowTime <= 0) StateArr[SLOW] = false;
-        if (StateArr[SLOW])
-        {
-            //GameObject e = Instantiate(Effect, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-            //Destroy(e, stunTime);
-            slowspeed = 0.5f;
-            slowTime--;
-        }
-        else
-        {
-            slowspeed = 1f;
-        }
+        
     }
 
     public void Damaged(float _attack)
@@ -115,27 +110,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Burn(float d, float t)
+    public void ChangeState(int state, float stime, float sdam)
     {
-        StateArr[BURN] = true;
-        burnDamage = d;
-        burnTime = t;
-    }
+        StateArr[state] = true;
+        StateTime[state] = stime;
 
-    public void Stun(float t)
-    {
-        StateArr[STUN] = true;
-        stunTime = t;
-    }
-
-    public void Slow(float t)
-    {
-        StateArr[SLOW] = true;
-        slowTime = t;
-    }
-
-    void ChangeState(int state,bool b)
-    {
-        StateArr[state] = b;
+        if(state == BURN)
+        {
+            burnDamage = sdam;
+        }
     }
 }

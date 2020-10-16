@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerStatus : MonoBehaviour
 {
+    private GameObject towerStatusUi;
     public GameObject towerPrefab;
     public Sprite[] rateSprite;
 
@@ -20,6 +21,13 @@ public class TowerStatus : MonoBehaviour
     // 상점
     public int cost = 1;
 
+    public string effect;
+
+    private void Awake()
+    {
+        towerStatusUi = GameObject.Find("TowerStatusUiBg");
+    }
+
     public void DestroyTower()
     {
         Destroy(this.gameObject);
@@ -31,5 +39,20 @@ public class TowerStatus : MonoBehaviour
         this.gameObject.tag = "Tower";
         transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = rateSprite[grade];
         attack *= 2;
+    }
+
+    void OnMouseUp()
+    {
+        Sprite spr = null;
+        if(tag == "Tower")
+        {
+            spr = transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
+        }
+        else
+        {
+            spr = transform.GetComponent<SpriteRenderer>().sprite;
+        }
+
+        towerStatusUi.GetComponent<TowerStatusUi>().SetUiTxt(spr,this.GetComponent<TowerStatus>());
     }
 }

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 807528763512799686}
   - component: {fileID: 807528763512799688}
   - component: {fileID: 807528763512799689}
+  - component: {fileID: 7991020990261621335}
   m_Layer: 0
-  m_Name: Fire1
+  m_Name: Shop_Fire1
   m_TagString: ShopSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,10 +101,38 @@ MonoBehaviour:
   rateSprite: []
   currentState: Shop
   towerName: "\uD654\uC5FC\uAD6C"
-  element: Fire
-  type: Magic
+  element: "\uBD88"
+  type: "\uC8FC\uBB38"
   attack: 5
   attack_speed: 1
   direction: 0
   grade: 0
   cost: 1
+  effect: "\uC801\uC5D0\uAC8C 5\uCD08\uB3D9\uC548 \uCD1D5\uC758 \uD53C\uD574\uB97C
+    \uC785\uD799\uB2C8\uB2E4."
+--- !u!61 &7991020990261621335
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807528763512799687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.14999998}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.55}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 479280541993167039}
   - component: {fileID: 7842233755342689919}
   m_Layer: 5
-  m_Name: Fire_Shoot
+  m_Name: Fire1
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,13 +73,15 @@ MonoBehaviour:
   - {fileID: -8600983540587562525, guid: 7c3232aacf4357042afee7743cc753b6, type: 3}
   currentState: Hand
   towerName: "\uD654\uC5FC\uAD6C"
-  element: Fire
-  type: Magic
+  element: "\uBD88"
+  type: "\uC8FC\uBB38"
   attack: 5
   attack_speed: 1
   direction: 0
   grade: 0
   cost: 1
+  effect: "\uC801\uC5D0\uAC8C 5\uCD08\uB3D9\uC548 \uCD1D5\uC758 \uD53C\uD574\uB97C
+    \uC785\uD799\uB2C8\uB2E4."
 --- !u!114 &479280541993167039
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,9 +5,11 @@ using UnityEngine;
 public class DefenceFail : MonoBehaviour
 {
     Controller_Stage controllerStage;
+    Controller_Enemy controllerEnemy;
     private void Start()
     {
         controllerStage = GameObject.Find("BG_Field").GetComponent<Controller_Stage>();
+        controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +18,7 @@ public class DefenceFail : MonoBehaviour
             //방어실패
             if (controllerStage.HP > 0)
             {
+                controllerEnemy.RemoveEnemy(other.gameObject);
                 controllerStage.HP--;
             }
             else

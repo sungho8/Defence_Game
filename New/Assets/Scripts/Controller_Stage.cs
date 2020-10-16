@@ -7,6 +7,9 @@ public class Controller_Stage : MonoBehaviour
     public GameObject StageTextUI;
     public GameObject MoneyTextUI;
     public GameObject HpTextUI;
+    public GameObject ManaTextUI;
+    //public GameObject ExpTextUI;
+    public GameObject LevelTextUI;
 
     Controller_Shop controllerShop;
 
@@ -26,6 +29,14 @@ public class Controller_Stage : MonoBehaviour
         set { hp = value; SetTextMesh(); }
     }
 
+    public int manaMax = 3;
+    int mana = 3;
+    public int Mana
+    {
+        get { return mana; }
+        set { mana = value; SetTextMesh(); }
+    }
+
     private void Start()
     {
         SetTextMesh();
@@ -37,6 +48,8 @@ public class Controller_Stage : MonoBehaviour
         StageTextUI.GetComponent<TextMesh>().text = "Stage " + Stage;
         MoneyTextUI.GetComponent<TextMesh>().text = Money + "$";
         HpTextUI.GetComponent<TextMesh>().text = "" + hp;
+        //LevelTextUI.GetComponent<TextMesh>().text = "Lv " + level;
+        ManaTextUI.GetComponent<TextMesh>().text = "" + mana;
     }
 
     /*
@@ -45,6 +58,7 @@ public class Controller_Stage : MonoBehaviour
      2. Money += 5
      3. isStart = false
      4. 상점 초기화
+     5. exp + 2;
          */
     
     public void CurrenStageClear()

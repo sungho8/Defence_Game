@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject target { get; set; }
+    public GameObject target;
+    public GameObject tower;
     public GameObject effect;
     public int BulletType;
 

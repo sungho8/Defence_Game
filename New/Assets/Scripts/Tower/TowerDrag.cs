@@ -85,10 +85,16 @@ public class TowerDrag : MonoBehaviour
         // 스테이지 비 진행중에만 드래그 가능
         if (!controllerStage.isStart)
         {
-            // 필드 배치
+            // 필드 배치 && 마나체크
             if (index >= 0)
             {
-                arrangeEffect.transform.position = new Vector3(0, 3000, 0);         // 이펙트 멀리멀리
+                if (!storageTower.CheckMana())
+                {
+                    transform.position = originPos;
+                    arrangeEffect.transform.position = new Vector3(0, 3000, 0);
+                    return;
+                }
+
                 transform.position = controllerTile.Tile[index].transform.position; // 타워 배치
                 towerStatus.currentState = "Field";
                 storageTower.Tower_Field[index] = this.gameObject;
@@ -96,36 +102,17 @@ public class TowerDrag : MonoBehaviour
             // 핸드 배치
             else if (index < -1)
             {
-                arrangeEffect.transform.position = new Vector3(0, 3000, 0);         // 이펙트 멀리멀리
                 transform.position = controllerHand.handSlots[-1 * index - 2].transform.position;
                 towerStatus.currentState = "Hand";
                 storageTower.Tower_Hand[-1 * index - 2] = this.gameObject;
             }
+            // 엉뚱한위치로 배치시 원래위치로
             else
             {
                 transform.position = originPos;
             }
-                
-            //Test();
         }
-    }
-
-    void Test()
-    {
-        string s = "Field : ";
-        for (int i = 0; i < storageTower.Tower_Field.Count; i++)
-        {
-            if (storageTower.Tower_Field[i] != null)
-                s += i + " " + storageTower.Tower_Field[i].name + ", ";
-        }
-        Debug.Log(s);
-
-        string s2 = "Hand : ";
-        for(int i =0; i < storageTower.Tower_Hand.Count; i++)
-        {
-            if (storageTower.Tower_Hand[i] != null) 
-                s2 += i + " " + storageTower.Tower_Hand[i].name + ",";
-        }
-        Debug.Log(s2);
+        arrangeEffect.transform.position = new Vector3(0, 3000, 0);         // 이펙트 멀리멀리
+        storageTower.CheckMana();
     }
 }

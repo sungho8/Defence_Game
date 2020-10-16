@@ -4,18 +4,19 @@ using UnityEngine;
 
 // Magic type Script
 
+// 총알 생성 (일반 투사체, 부메랑 투사체)
 public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     
     private TowerStatus towerStatus;
-    private Controller_Enemy c;
+    private Controller_Enemy controllerEnemy;
     private float time = 0;
 
     private void Awake()
     {
         towerStatus = GetComponent<TowerStatus>();
-        c = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
+        controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
     }
 
     void Update()
@@ -27,7 +28,7 @@ public class Shoot : MonoBehaviour
             {
                 if (CheckTarget() != null)
                 {
-                    ShootBullet(CheckTarget());
+                    NormalBullet(CheckTarget());
                 }
                 time = 0;
             }
@@ -41,11 +42,11 @@ public class Shoot : MonoBehaviour
         float min = 10f;
         int minIndex = 0;
 
-        if (c.Enemys.Count != 0)
+        if (controllerEnemy.Enemys.Count != 0)
         {
-            for (int i = 0; i < c.Enemys.Count; i++)
+            for (int i = 0; i < controllerEnemy.Enemys.Count; i++)
             {
-                offset = c.Enemys[i].transform.position - transform.position;
+                offset = controllerEnemy.Enemys[i].transform.position - transform.position;
 
                 if (min > offset.sqrMagnitude)
                 {
@@ -53,7 +54,7 @@ public class Shoot : MonoBehaviour
                     minIndex = i;
                 }
             }
-            return c.Enemys[minIndex];
+            return controllerEnemy.Enemys[minIndex];
         }
         else
         {
@@ -61,14 +62,16 @@ public class Shoot : MonoBehaviour
         }
     }
 
-    // 총알 생성
-    void ShootBullet(GameObject _target)
+    // 총알 생성(부메랑 추가)
+    void NormalBullet(GameObject _target)
     {
         GameObject temp = Instantiate(bullet, transform.position, Quaternion.identity);
         temp.transform.localScale = new Vector2(0.5f, 0.5f);
 
         Bullet bul = temp.GetComponent<Bullet>();
         bul.target = _target;
+        bul.tower = this.gameObject;
         bul.attack = towerStatus.attack;
     }
+
 }

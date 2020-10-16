@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2090021966138888472}
   - component: {fileID: 2090021966138888470}
   - component: {fileID: 2090021966138888471}
+  - component: {fileID: -1068304052808070949}
   m_Layer: 0
   m_Name: Shop_Water1
   m_TagString: ShopSprite
@@ -100,10 +101,37 @@ MonoBehaviour:
   rateSprite: []
   currentState: Shop
   towerName: "\uBB3C\uBC29\uC6B8"
-  element: Water
-  type: Magic
+  element: "\uBB3C"
+  type: "\uC8FC\uBB38"
   attack: 5
   attack_speed: 1
   direction: 0
   grade: 0
   cost: 1
+  effect: "\uC801\uC744 2\uCD08\uB3D9\uC548 \uB290\uB9AC\uAC8C \uD569\uB2C8\uB2E4."
+--- !u!61 &-1068304052808070949
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090021966138888473}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0

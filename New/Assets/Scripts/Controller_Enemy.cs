@@ -41,10 +41,16 @@ public class Controller_Enemy : MonoBehaviour
             RemainingEnemyCount--;
         }
         // 해당 스테이지 클리어!
-        else if(controllerStage.isStart == true && RemainingEnemyCount == 0)
+        else if(controllerStage.isStart == true && RemainingEnemyCount == 0 && Enemys.Count == 0)
         {
+            Debug.Log("Clear");
             controllerStage.CurrenStageClear();
             RemainingEnemyCount = 30;
         }
+    }
+
+    public void RemoveEnemy(GameObject e)
+    {
+        Enemys.Remove(e);
     }
 }

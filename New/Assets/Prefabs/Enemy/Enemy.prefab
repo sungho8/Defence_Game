@@ -103,7 +103,6 @@ MonoBehaviour:
     type: 3}
   speed: 1
   hp: 10
-  target: 0
 --- !u!114 &6298573910133159922
 MonoBehaviour:
   m_ObjectHideFlags: 0

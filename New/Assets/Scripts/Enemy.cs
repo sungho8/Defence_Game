@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // state
+    // State
     bool[] StateArr;
     float[] StateTime;
     const int STATE_COUNT = 3;
@@ -15,16 +15,19 @@ public class Enemy : MonoBehaviour
     Controller_Tile controllerTile;
     Controller_Enemy controllerEnemy;
     Animation anim;
+    GameObject nextTile;
+    int tileIndex = 0;
 
     public GameObject StunEffect;
-    public float speed = 0.1f;
-    public float hp = 10;
-    public int target = 0;
+    public float speed;
+    public float hp;
 
     float next = 0.0f;
     float delay = 1.0f;
     float burnDamage = 0;
     float slowspeed = 1;
+
+    int row = 0, col = 0;
 
     void Awake()
     {
@@ -33,6 +36,8 @@ public class Enemy : MonoBehaviour
         controllerTile = GameObject.Find("BG_Field").GetComponent<Controller_Tile>();
         controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
         anim = gameObject.GetComponent<Animation>();
+
+        nextTile = controllerTile.route[0];
     }
 
     void Update()
@@ -43,29 +48,27 @@ public class Enemy : MonoBehaviour
             next = Time.time + delay;
             CheckState();
         }
+        
+        CheckNextTile();
 
-        // Move
-        if (target < controllerTile.InvasionRoute.Count - 1) 
-            CheckNextTile();
-
-        if (!StateArr[STUN])
+        // 스턴상태 아니면 다음타일로 이동
+        if (!StateArr[STUN] && nextTile != null)
         {
-            Vector2 targetVec = controllerTile.InvasionRoute[target].transform.position;
+            Vector2 targetVec = nextTile.transform.position;
             transform.position = Vector3.MoveTowards(transform.position, targetVec, Time.deltaTime * slowspeed * speed);
         }
     }
 
-    int CheckNextTile()
+    void CheckNextTile()
     {
-        float closed = 0.001f;
-        Vector2 offset = controllerTile.InvasionRoute[target].transform.position - transform.position;
-
+        float closed = 0.01f;
+        Vector2 offset = nextTile.transform.position - transform.position;
         if (closed > offset.sqrMagnitude)
         {
-            return ++target;
+            nextTile = controllerTile.route[++tileIndex];
         }
-        return target;
     }
+
 
     void CheckState()
     {
@@ -93,8 +96,6 @@ public class Enemy : MonoBehaviour
 
             if (!StateArr[SLOW]) slowspeed = 1.0f;
         }
-
-        
     }
 
     public void Damaged(float _attack)

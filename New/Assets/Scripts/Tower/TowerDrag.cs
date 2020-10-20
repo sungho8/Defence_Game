@@ -15,6 +15,8 @@ public class TowerDrag : MonoBehaviour
     GameObject arrangeEffect;
 
     public int index = -1;
+    int x = 0;
+    int y = 0;
 
     private void Start()
     {
@@ -72,7 +74,13 @@ public class TowerDrag : MonoBehaviour
             if (index >= 0) 
             {
                 // 배치위치 표시이펙트
-                arrangeEffect.transform.position = controllerTile.Tile[index].transform.position;
+                // index = 0
+
+                y = index / controllerTile.col;
+                x = index % controllerTile.col;
+                Debug.Log(index +" = "+ x + "," +y);
+
+                arrangeEffect.transform.position = controllerTile.Tile[y][x].transform.position;
             }else if (index < -1)
             {
                 arrangeEffect.transform.position = controllerHand.handSlots[-1 * index - 2].transform.position;
@@ -95,7 +103,7 @@ public class TowerDrag : MonoBehaviour
                     return;
                 }
 
-                transform.position = controllerTile.Tile[index].transform.position; // 타워 배치
+                transform.position = controllerTile.Tile[y][x].transform.position; // 타워 배치
                 towerStatus.currentState = "Field";
                 storageTower.Tower_Field[index] = this.gameObject;
             }

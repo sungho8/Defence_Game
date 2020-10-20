@@ -29,8 +29,8 @@ public class Controller_Stage : MonoBehaviour
         set { hp = value; SetTextMesh(); }
     }
 
-    public int manaMax = 3;
-    int mana = 3;
+    public int manaMax = 30;
+    int mana = 30;
     public int Mana
     {
         get { return mana; }

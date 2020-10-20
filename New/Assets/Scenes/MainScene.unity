@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 55629722}
   - component: {fileID: 55629723}
   m_Layer: 0
-  m_Name: Tile23
+  m_Name: Tile5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,7 +310,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 150647219}
   - component: {fileID: 150647220}
   m_Layer: 0
-  m_Name: Tile16
+  m_Name: Tile7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,7 +919,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2078,7 +2078,7 @@ GameObject:
   - component: {fileID: 421574063}
   - component: {fileID: 421574064}
   m_Layer: 0
-  m_Name: Tile44
+  m_Name: Tile8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2139,7 +2139,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2337,38 +2337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60b3aa240f62ef4fa513f8043da6228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InvasionRoute:
-  - {fileID: 1471761708}
-  - {fileID: 1928835368}
-  - {fileID: 519127037}
-  - {fileID: 673155996}
-  - {fileID: 1514896398}
-  - {fileID: 1877351905}
-  - {fileID: 2016288917}
-  - {fileID: 150647218}
-  - {fileID: 2064002101}
-  - {fileID: 1384984577}
-  - {fileID: 1827100870}
-  - {fileID: 1913917037}
-  - {fileID: 464638378}
-  - {fileID: 1996926620}
-  - {fileID: 1234966835}
-  - {fileID: 1170002244}
-  - {fileID: 1011459081}
-  - {fileID: 1906878508}
-  - {fileID: 666198707}
-  - {fileID: 1735562960}
-  - {fileID: 1883847211}
-  - {fileID: 1371182930}
-  - {fileID: 55629721}
-  - {fileID: 982347111}
-  - {fileID: 1652801456}
-  - {fileID: 1728499122}
-  - {fileID: 1069443890}
-  - {fileID: 2121634039}
-  - {fileID: 1189149736}
-  - {fileID: 2069617703}
-  Tile: []
+  route: []
   StartTile: {fileID: 1189149736}
   EndTile: {fileID: 1471761708}
   StartHand: {fileID: 128488033}
@@ -2409,7 +2378,7 @@ MonoBehaviour:
   LevelTextUI: {fileID: 382343140}
   isStart: 0
   Stage: 1
-  manaMax: 3
+  manaMax: 100
 --- !u!114 &455641478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2434,7 +2403,7 @@ GameObject:
   - component: {fileID: 464638379}
   - component: {fileID: 464638380}
   m_Layer: 0
-  m_Name: Tile41
+  m_Name: Tile5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2495,7 +2464,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2721,7 +2690,7 @@ GameObject:
   - component: {fileID: 480816413}
   - component: {fileID: 480816414}
   m_Layer: 0
-  m_Name: Tile32
+  m_Name: Tile5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2782,7 +2751,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2894,7 +2863,7 @@ GameObject:
   - component: {fileID: 519127038}
   - component: {fileID: 519127039}
   m_Layer: 0
-  m_Name: Tile27
+  m_Name: Tile9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2955,7 +2924,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3536,7 +3505,7 @@ GameObject:
   - component: {fileID: 607591146}
   - component: {fileID: 607591145}
   m_Layer: 0
-  m_Name: Tile0
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3618,7 +3587,7 @@ GameObject:
   - component: {fileID: 612411128}
   - component: {fileID: 612411129}
   m_Layer: 0
-  m_Name: Tile13
+  m_Name: Tile4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3679,7 +3648,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3784,7 +3753,7 @@ GameObject:
   - component: {fileID: 666198708}
   - component: {fileID: 666198709}
   m_Layer: 0
-  m_Name: Tile19
+  m_Name: Tile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3845,7 +3814,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3866,7 +3835,7 @@ GameObject:
   - component: {fileID: 673155997}
   - component: {fileID: 673155998}
   m_Layer: 0
-  m_Name: Tile18
+  m_Name: Tile9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3927,7 +3896,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9090,7 +9059,7 @@ GameObject:
   - component: {fileID: 756336936}
   - component: {fileID: 756336937}
   m_Layer: 0
-  m_Name: Tile26
+  m_Name: Tile8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9151,7 +9120,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9299,7 +9268,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14937,7 +14906,7 @@ GameObject:
   - component: {fileID: 982347112}
   - component: {fileID: 982347113}
   m_Layer: 0
-  m_Name: Tile14
+  m_Name: Tile5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14998,7 +14967,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15324,7 +15293,7 @@ GameObject:
   - component: {fileID: 1011459082}
   - component: {fileID: 1011459083}
   m_Layer: 0
-  m_Name: Tile37
+  m_Name: Tile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15385,7 +15354,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15406,7 +15375,7 @@ GameObject:
   - component: {fileID: 1029578236}
   - component: {fileID: 1029578237}
   m_Layer: 0
-  m_Name: Tile31
+  m_Name: Tile4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15467,7 +15436,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15882,7 +15851,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15903,7 +15872,7 @@ GameObject:
   - component: {fileID: 1080353764}
   - component: {fileID: 1080353765}
   m_Layer: 0
-  m_Name: Tile35
+  m_Name: Tile8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15964,7 +15933,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16269,7 +16238,7 @@ GameObject:
   - component: {fileID: 1170002245}
   - component: {fileID: 1170002246}
   m_Layer: 0
-  m_Name: Tile38
+  m_Name: Tile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16330,7 +16299,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16412,7 +16381,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16516,7 +16485,7 @@ GameObject:
   - component: {fileID: 1234966836}
   - component: {fileID: 1234966837}
   m_Layer: 0
-  m_Name: Tile39
+  m_Name: Tile3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16577,7 +16546,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16708,7 +16677,7 @@ GameObject:
   - component: {fileID: 1246705451}
   - component: {fileID: 1246705452}
   m_Layer: 0
-  m_Name: Tile15
+  m_Name: Tile6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16769,7 +16738,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17415,7 +17384,7 @@ GameObject:
   - component: {fileID: 1371182931}
   - component: {fileID: 1371182932}
   m_Layer: 0
-  m_Name: Tile22
+  m_Name: Tile4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17476,7 +17445,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17497,7 +17466,7 @@ GameObject:
   - component: {fileID: 1384984578}
   - component: {fileID: 1384984579}
   m_Layer: 0
-  m_Name: Tile34
+  m_Name: Tile7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17558,7 +17527,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17855,7 +17824,7 @@ GameObject:
   - component: {fileID: 1471407330}
   - component: {fileID: 1471407331}
   m_Layer: 0
-  m_Name: Tile33
+  m_Name: Tile6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17916,7 +17885,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17937,7 +17906,7 @@ GameObject:
   - component: {fileID: 1471761709}
   - component: {fileID: 1471761710}
   m_Layer: 0
-  m_Name: Tile45
+  m_Name: Tile9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17998,7 +17967,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -18086,7 +18055,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -18413,7 +18382,7 @@ GameObject:
   - component: {fileID: 1588990113}
   - component: {fileID: 1588990114}
   m_Layer: 0
-  m_Name: Tile24
+  m_Name: Tile6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18474,7 +18443,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -19071,7 +19040,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -24201,7 +24170,7 @@ GameObject:
   - component: {fileID: 1693247501}
   - component: {fileID: 1693247502}
   m_Layer: 0
-  m_Name: Tile30
+  m_Name: Tile3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24262,7 +24231,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -24426,7 +24395,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -24447,7 +24416,7 @@ GameObject:
   - component: {fileID: 1735562961}
   - component: {fileID: 1735562962}
   m_Layer: 0
-  m_Name: Tile20
+  m_Name: Tile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24508,7 +24477,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -24933,7 +24902,7 @@ GameObject:
   - component: {fileID: 1827100871}
   - component: {fileID: 1827100872}
   m_Layer: 0
-  m_Name: Tile43
+  m_Name: Tile7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24994,7 +24963,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25150,7 +25119,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25171,7 +25140,7 @@ GameObject:
   - component: {fileID: 1883847212}
   - component: {fileID: 1883847213}
   m_Layer: 0
-  m_Name: Tile21
+  m_Name: Tile3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25232,7 +25201,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25253,7 +25222,7 @@ GameObject:
   - component: {fileID: 1886456469}
   - component: {fileID: 1886456470}
   m_Layer: 0
-  m_Name: Tile12
+  m_Name: Tile3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25314,7 +25283,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25335,7 +25304,7 @@ GameObject:
   - component: {fileID: 1906878509}
   - component: {fileID: 1906878510}
   m_Layer: 0
-  m_Name: Tile28
+  m_Name: Tile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25396,7 +25365,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25527,7 +25496,7 @@ GameObject:
   - component: {fileID: 1913917038}
   - component: {fileID: 1913917039}
   m_Layer: 0
-  m_Name: Tile42
+  m_Name: Tile6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25588,7 +25557,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25609,7 +25578,7 @@ GameObject:
   - component: {fileID: 1928835369}
   - component: {fileID: 1928835370}
   m_Layer: 0
-  m_Name: Tile36
+  m_Name: Tile9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25670,7 +25639,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25691,7 +25660,7 @@ GameObject:
   - component: {fileID: 1937740090}
   - component: {fileID: 1937740091}
   m_Layer: 0
-  m_Name: Tile29
+  m_Name: Tile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25752,7 +25721,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25773,7 +25742,7 @@ GameObject:
   - component: {fileID: 1939141652}
   - component: {fileID: 1939141653}
   m_Layer: 0
-  m_Name: Tile11
+  m_Name: Tile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25834,7 +25803,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -25855,7 +25824,7 @@ GameObject:
   - component: {fileID: 1941181753}
   - component: {fileID: 1941181754}
   m_Layer: 0
-  m_Name: Tile10
+  m_Name: Tile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25916,7 +25885,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26225,7 +26194,7 @@ GameObject:
   - component: {fileID: 1996926621}
   - component: {fileID: 1996926622}
   m_Layer: 0
-  m_Name: Tile40
+  m_Name: Tile4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26286,7 +26255,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26368,7 +26337,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26389,7 +26358,7 @@ GameObject:
   - component: {fileID: 2039704345}
   - component: {fileID: 2039704346}
   m_Layer: 0
-  m_Name: Tile17
+  m_Name: Tile8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26450,7 +26419,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26471,7 +26440,7 @@ GameObject:
   - component: {fileID: 2064002102}
   - component: {fileID: 2064002103}
   m_Layer: 0
-  m_Name: Tile25
+  m_Name: Tile7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26532,7 +26501,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26637,7 +26606,7 @@ GameObject:
   - component: {fileID: 2069617706}
   - component: {fileID: 2069617707}
   m_Layer: 0
-  m_Name: Tile46
+  m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26651,7 +26620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069617703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.494, y: 0.398, z: 0}
+  m_LocalPosition: {x: -0.456, y: 0.424, z: 0}
   m_LocalScale: {x: 0.096875004, y: 0.17222223, z: 0}
   m_Children: []
   m_Father: {fileID: 455641473}
@@ -26928,7 +26897,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b23d8c6490d286d41ac8b97e45fd9d1d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

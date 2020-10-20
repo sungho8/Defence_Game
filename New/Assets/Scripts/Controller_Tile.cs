@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Controller_Tile : MonoBehaviour
 {
-    public List<GameObject> InvasionRoute;  // 공격로
-    public List<GameObject> Tile;           // 모든 타일
+    public List<List<GameObject>> Tile;           // 모든 타일
+    public List<GameObject> route;
+
+    // Dir(left > up = down > right)
+    int[] dirx = { -1, 0, 0, 1 };
+    int[] diry = { 0, -1, 1, 0 };
+    
 
     public GameObject StartTile;
     public GameObject EndTile;
@@ -15,31 +20,69 @@ public class Controller_Tile : MonoBehaviour
 
     private Controller_Hand controllerHand;
     private Storage_Tower storageTower;
-    private readonly int tileCount = 45;
+    public readonly int row = 5;
+    public readonly int col = 9;
+    bool isok;
 
     private void Awake()
     {
         storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
         controllerHand = GameObject.Find("Hand").GetComponent<Controller_Hand>();
-        
+        tInit();
+    }
+
+    void tInit()
+    {
+        Tile = new List<List<GameObject>>();
         // Init All Tile
-        for (int i = 1; i <= tileCount; i++)
+        for (int i = 1; i <= row; i++)
         {
-            Tile.Add(GameObject.Find("Tile" + i));
+            GameObject r = GameObject.Find("Row" + i);
+            List<GameObject> list = new List<GameObject>();
+            for (int j = 0; j < r.transform.childCount; j++)
+            {
+                list.Add(r.transform.GetChild(j).gameObject);
+            }
+            Tile.Add(list);
         }
     }
 
-    // 해당타일이 공격로인지 확인
-    public bool CheckInvasionRoute(GameObject t)
+    void go(int cr, int cc, bool[,] visit, string sroute)
     {
-        for(int i =0; i < InvasionRoute.Count; i++)
+        visit[cr, cc] = true;
+        sroute += cr + "" + cc;
+        if (cr == 0 && cc == 0)
         {
-            if(InvasionRoute[i] == t)
+            isok = true;
+            for(int i = 0; i < sroute.Length; i+=2)
             {
-                return false;   // 공격로라면 return false
+                int r = sroute[i] - '0';
+                int c = sroute[i + 1] - '0';
+                route.Add(Tile[r][c]);
+            }
+            return;
+        }
+
+        for (int i = 0; i < dirx.Length; i++)
+        {
+            int nr = cr + diry[i];
+            int nc = cc + dirx[i];
+            if (nr < row && nc < col && nr >= 0 && nc >= 0 && !visit[nr,nc] && storageTower.Tower_Field[nr * col + nc] == null && !isok)
+            {
+                go(nr, nc, visit, sroute);
             }
         }
-        return true;
+    }
+
+    public bool CheckInvasionRoute()
+    {
+        route = new List<GameObject>();
+        bool[,] visit = new bool[5, 9];
+        isok = false;
+        string sroute = "";
+        go(row - 1, col - 1, visit, sroute);
+
+        return isok;
     }
 
     public int CheckClosedTile(Transform t)
@@ -54,11 +97,15 @@ public class Controller_Tile : MonoBehaviour
         {
             for (int i = 0; i < Tile.Count; i++)
             {
-                offset = Tile[i].transform.position - t.position;
-                if (min > offset.sqrMagnitude && CheckInvasionRoute(Tile[i]) && storageTower.Tower_Field[i] == null)
+                for(int j = 0; j < Tile[0].Count; j++)
                 {
-                    min = offset.sqrMagnitude;
-                    result = i;
+                    offset = Tile[i][j].transform.position - t.position;
+                    //&& CheckInvasionRoute(Tile[i][j])
+                    if (min > offset.sqrMagnitude && storageTower.Tower_Field[i] == null)
+                    {
+                        min = offset.sqrMagnitude;
+                        result = i * col + j;
+                    }
                 }
             }
         }
@@ -71,7 +118,7 @@ public class Controller_Tile : MonoBehaviour
                 if (min > offset.sqrMagnitude)
                 {
                     min = offset.sqrMagnitude;
-                    result = -2 - i;
+                    result = - 2 - i;
                 }
             }
         }

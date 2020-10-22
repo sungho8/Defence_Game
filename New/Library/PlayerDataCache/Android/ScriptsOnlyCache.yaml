@@ -2,7 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Bullet
-    - CameraMove
     - Controller_Enemy
     - Controller_Hand
     - Controller_Shop
@@ -10,9 +9,11 @@ ScriptsOnlyBuild:
     - Controller_Tile
     - Controller_Time
     - Controller_Tower
+    - DefenceFail
     - DestroyEffect
     - Enemy
     - PinchZoom
+    - ReRoll
     - SetCamera
     - Shoot
     - Shop
@@ -25,6 +26,7 @@ ScriptsOnlyBuild:
     - Time_x2
     - TowerDrag
     - TowerStatus
+    - TowerStatusUi
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -95,61 +97,65 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11746}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 11874}
+      Script: {instanceID: 11876}
     - Class: 114
-      Script: {instanceID: 11924}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 12016}
+      Script: {instanceID: 11928}
     - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12020}
     - Class: 114
-      Script: {instanceID: 12096}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 12214}
+      Script: {instanceID: 12100}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 12316}
+      Script: {instanceID: 12248}
     - Class: 114
-      Script: {instanceID: 12542}
+      Script: {instanceID: 12320}
     - Class: 114
-      Script: {instanceID: 12752}
+      Script: {instanceID: 12382}
     - Class: 114
-      Script: {instanceID: 12838}
+      Script: {instanceID: 12548}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 12758}
     - Class: 114
-      Script: {instanceID: 13580}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 13628}
+      Script: {instanceID: 12906}
     - Class: 114
-      Script: {instanceID: 13752}
+      Script: {instanceID: 13584}
     - Class: 114
-      Script: {instanceID: 13790}
+      Script: {instanceID: 13590}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13760}
     - Class: 114
-      Script: {instanceID: 14008}
+      Script: {instanceID: 13798}
     - Class: 114
-      Script: {instanceID: 14028}
+      Script: {instanceID: 13854}
     - Class: 114
-      Script: {instanceID: 14440}
+      Script: {instanceID: 14016}
     - Class: 114
-      Script: {instanceID: 14596}
+      Script: {instanceID: 14036}
     - Class: 114
-      Script: {instanceID: 14680}
+      Script: {instanceID: 14448}
     - Class: 114
-      Script: {instanceID: 14696}
+      Script: {instanceID: 14604}
     - Class: 114
-      Script: {instanceID: 14876}
+      Script: {instanceID: 14688}
     - Class: 114
-      Script: {instanceID: 14898}
+      Script: {instanceID: 14704}
     - Class: 114
-      Script: {instanceID: 15080}
+      Script: {instanceID: 14884}
     - Class: 114
-      Script: {instanceID: 26652}
+      Script: {instanceID: 14906}
+    - Class: 114
+      Script: {instanceID: 15088}
+    - Class: 114
+      Script: {instanceID: 15180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -171,6 +177,12 @@ ScriptsOnlyBuild:
     - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 3b7c79431417a06eeec9b3030091b8ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bumerang
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -201,6 +213,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Time_Pause
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ReRoll
   - hash:
       serializedVersion: 2
       Hash: ee17abc28cc51eb78f8bf4de956b90da
@@ -251,7 +269,7 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: eff3f421858c629d50357f230c5f2409
+      Hash: 174ae04e803525bb872aca602a4b21c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Stage
@@ -335,7 +353,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: b776ea8c014c6e0ac25a7f65103b58e3
+      Hash: aabab93685f49677d67cb0fcdf08183d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Tile
@@ -351,6 +369,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetCamera
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -425,6 +449,12 @@ ScriptsOnlyBuild:
     className: SpriteOutline
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy2
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -453,6 +483,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 2b4be088cd6e3009e74a6875a754832f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TowerStatusUi
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -521,12 +557,6 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 91c491a92e975b9b253360cffb74d350
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CameraMove
-  - hash:
-      serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -545,13 +575,13 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 1b606f86f8c520b3cf510b8688e78f73
+      Hash: 8f6950aa534a13e5c10f2028fdf6fa42
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TowerStatus
   - hash:
       serializedVersion: 2
-      Hash: 43c34e1e929a8e7bd1c258afd7e2f7b4
+      Hash: 5c4a737edb6c94e5bf7318bcb257ddb9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -659,7 +689,7 @@ ScriptsOnlyBuild:
     className: Controller_Hand
   - hash:
       serializedVersion: 2
-      Hash: 08e2050fbce42a534cc3d12b7f01fad3
+      Hash: 383915d60e9bcd0c96be8cde5406f718
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -683,7 +713,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 4121628aea796b9754408d11121774ce
+      Hash: 97e9e2e132f371f195d7aa3de2477d75
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shop
@@ -785,16 +815,16 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DefenceFail
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SetCamera
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity

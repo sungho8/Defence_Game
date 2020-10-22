@@ -75,10 +75,8 @@ public class TowerDrag : MonoBehaviour
             {
                 // 배치위치 표시이펙트
                 // index = 0
-
                 y = index / controllerTile.col;
                 x = index % controllerTile.col;
-                Debug.Log(index +" = "+ x + "," +y);
 
                 arrangeEffect.transform.position = controllerTile.Tile[y][x].transform.position;
             }else if (index < -1)

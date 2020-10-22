@@ -8,7 +8,6 @@ public class Controller_Stage : MonoBehaviour
     public GameObject MoneyTextUI;
     public GameObject HpTextUI;
     public GameObject ManaTextUI;
-    //public GameObject ExpTextUI;
     public GameObject LevelTextUI;
 
     Controller_Shop controllerShop;
@@ -29,12 +28,19 @@ public class Controller_Stage : MonoBehaviour
         set { hp = value; SetTextMesh(); }
     }
 
-    public int manaMax = 30;
-    int mana = 30;
+    public int manaMax = 3;
+    int mana = 3;
     public int Mana
     {
         get { return mana; }
         set { mana = value; SetTextMesh(); }
+    }
+
+    int level = 1;
+    public int Level
+    {
+        get { return level; }
+        set { level = value; SetTextMesh(); }
     }
 
     private void Start()
@@ -48,7 +54,7 @@ public class Controller_Stage : MonoBehaviour
         StageTextUI.GetComponent<TextMesh>().text = "Stage " + Stage;
         MoneyTextUI.GetComponent<TextMesh>().text = Money + "$";
         HpTextUI.GetComponent<TextMesh>().text = "" + hp;
-        //LevelTextUI.GetComponent<TextMesh>().text = "Lv " + level;
+        LevelTextUI.GetComponent<TextMesh>().text = ""+level;
         ManaTextUI.GetComponent<TextMesh>().text = "" + mana;
     }
 

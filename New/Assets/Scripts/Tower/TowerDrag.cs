@@ -15,6 +15,7 @@ public class TowerDrag : MonoBehaviour
     GameObject arrangeEffect;
 
     public int index = -1;
+    int preIndex = -1;
     int x = 0;
     int y = 0;
 
@@ -43,12 +44,14 @@ public class TowerDrag : MonoBehaviour
             // 이미 배치되어있는 타워일경우 (- 일경우 아직 배치되지 않은 타워)
             if (index >= 0)
             {
-                storageTower.Tower_Field[index] = null;
+                //storageTower.Tower_Field[index] = null;
+                preIndex = index;
                 index = -1;
             }
             else if(index < -1)
             {
-                storageTower.Tower_Hand[-1 * index - 2] = null;
+                //storageTower.Tower_Hand[-1 * index - 2] = null;
+                preIndex = -1 * index - 2;
             }
         }
     }
@@ -94,20 +97,27 @@ public class TowerDrag : MonoBehaviour
             // 필드 배치 && 마나체크
             if (index >= 0)
             {
-                if (!storageTower.CheckMana())
+                if (!storageTower.CheckMana() || storageTower.Tower_Field[index] != null)
                 {
-                    transform.position = originPos;
-                    arrangeEffect.transform.position = new Vector3(0, 3000, 0);
+                    Debug.Log("Index : "+index + " / "+preIndex);
+                    originArrange();
                     return;
                 }
 
                 transform.position = controllerTile.Tile[y][x].transform.position; // 타워 배치
                 towerStatus.currentState = "Field";
                 storageTower.Tower_Field[index] = this.gameObject;
+                controllerTile.CheckInvasionRoute();
             }
             // 핸드 배치
             else if (index < -1)
             {
+                if (storageTower.Tower_Hand[-1 * index - 2] != null)
+                {
+                    originArrange();
+                    return;
+                }
+
                 transform.position = controllerHand.handSlots[-1 * index - 2].transform.position;
                 towerStatus.currentState = "Hand";
                 storageTower.Tower_Hand[-1 * index - 2] = this.gameObject;
@@ -115,10 +125,26 @@ public class TowerDrag : MonoBehaviour
             // 엉뚱한위치로 배치시 원래위치로
             else
             {
-                transform.position = originPos;
+                originArrange();
             }
         }
         arrangeEffect.transform.position = new Vector3(0, 3000, 0);         // 이펙트 멀리멀리
-        storageTower.CheckMana();
+    }
+
+    // 원래위치로
+    void originArrange()
+    {
+        if(preIndex >= 0)
+        {
+            storageTower.Tower_Field[preIndex] = this.gameObject;
+        }
+        else
+        {
+            storageTower.Tower_Hand[preIndex] = this.gameObject;
+        }
+
+        transform.position = originPos;
+        arrangeEffect.transform.position = new Vector3(0, 3000, 0);
+        index = preIndex;
     }
 }

@@ -48,6 +48,11 @@ public class Storage_Tower : MonoBehaviour
         controllerTower = GameObject.Find("BG_Field").GetComponent<Controller_Tower>();
     }
 
+    private void Update()
+    {
+        CheckMana();
+    }
+
     public bool CheckMana()
     {
         int maxmana = controllerStage.manaMax;

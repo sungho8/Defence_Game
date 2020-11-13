@@ -10,7 +10,6 @@ public class Controller_Tile : MonoBehaviour
     // Dir(left > up = down > right)
     int[] dirx = { -1, 0, 0, 1 };
     int[] diry = { 0, -1, 1, 0 };
-    
 
     public GameObject StartTile;
     public GameObject EndTile;
@@ -22,6 +21,7 @@ public class Controller_Tile : MonoBehaviour
     private Storage_Tower storageTower;
     public readonly int row = 5;
     public readonly int col = 9;
+    int min;
     bool isok;
 
     private void Awake()
@@ -29,6 +29,11 @@ public class Controller_Tile : MonoBehaviour
         storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
         controllerHand = GameObject.Find("Hand").GetComponent<Controller_Hand>();
         tInit();
+    }
+
+    private void Start()
+    {
+        CheckInvasionRoute();
     }
 
     void tInit()
@@ -51,10 +56,13 @@ public class Controller_Tile : MonoBehaviour
     {
         visit[cr, cc] = true;
         sroute += cr + "" + cc;
-        if (cr == 0 && cc == 0)
+        if (cr == 0 && cc == 0 && sroute.Length < min)
         {
+            min = sroute.Length;
+            
             isok = true;
-            for(int i = 0; i < sroute.Length; i+=2)
+            route = new List<GameObject>();
+            for (int i = 0; i < sroute.Length; i+=2)
             {
                 int r = sroute[i] - '0';
                 int c = sroute[i + 1] - '0';
@@ -67,20 +75,37 @@ public class Controller_Tile : MonoBehaviour
         {
             int nr = cr + diry[i];
             int nc = cc + dirx[i];
-            if (nr < row && nc < col && nr >= 0 && nc >= 0 && !visit[nr,nc] && storageTower.Tower_Field[nr * col + nc] == null && !isok)
+            if (nr < row && nc < col && nr >= 0 && nc >= 0 && !visit[nr, nc] && storageTower.Tower_Field[nr * col + nc] == null)
             {
                 go(nr, nc, visit, sroute);
+                visit[cr, cc] = false;
             }
         }
     }
 
     public bool CheckInvasionRoute()
     {
-        route = new List<GameObject>();
+        min = 99;
         bool[,] visit = new bool[5, 9];
         isok = false;
         string sroute = "";
         go(row - 1, col - 1, visit, sroute);
+
+        for(int i =0; i < Tile.Count; i++)
+        {
+            for(int j = 0; j < Tile[0].Count; j++)
+            {
+                Tile[i][j].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1,67/255f);
+            }
+        }
+
+        if (isok)
+        {
+            for(int i = 0; i < route.Count; i++)
+            {
+                route[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 20/255f);
+            }
+        }
 
         return isok;
     }

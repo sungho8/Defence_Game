@@ -19,7 +19,7 @@ public class StageStart : MonoBehaviour
         
         if (controllerStage.isStart == false && controllerTile.CheckInvasionRoute())
         {
-            controllerStage.isStart = true;
+            controllerStage.IsStart = true;
         }
         else
         {

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DestroyEffect : MonoBehaviour
 {
-    void EndDestroy()
+    void EndDestroy(float delay)
     {
-        Destroy(this.gameObject, 1f);
+        Destroy(this.gameObject, delay);
     }
 }

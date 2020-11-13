@@ -49,11 +49,11 @@ TagManager:
   - name: Field
     uniqueID: 2563173181
     locked: 0
-  - name: Enemy
-    uniqueID: 2536762577
-    locked: 0
   - name: Tower
     uniqueID: 1363968501
+    locked: 0
+  - name: Enemy
+    uniqueID: 2536762577
     locked: 0
   - name: Effect
     uniqueID: 284446275

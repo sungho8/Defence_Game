@@ -6,7 +6,7 @@ public class Controller_Enemy : MonoBehaviour
 {
     public GameObject Sponer;
     public List<GameObject> Enemys;
-    public GameObject EnemyObject;
+    public List<GameObject> currentEnemys;
 
     public int RemainingEnemyCount = 30;
 
@@ -34,14 +34,17 @@ public class Controller_Enemy : MonoBehaviour
         if (RemainingEnemyCount > 0 && controllerStage.isStart)
         {
             time = 0;
-            temp = Instantiate(EnemyObject, Sponer.transform.position, Quaternion.identity);
-            temp.GetComponent<Enemy>().hp = 10 * controllerStage.Stage;
-            Enemys.Add(temp);
+            temp = Instantiate(Enemys[controllerStage.Stage - 1], Sponer.transform.position, Quaternion.identity);
+            temp.GetComponent<Enemy>().hp = 11 * controllerStage.Stage;
+            temp.GetComponent<Enemy>().maxhp = 11 * controllerStage.Stage;
+            temp.GetComponent<Enemy>().speed = 1;
+            temp.name = temp.name + " " + currentEnemys.Count;
+            currentEnemys.Add(temp);
 
             RemainingEnemyCount--;
         }
         // 해당 스테이지 클리어!
-        else if(controllerStage.isStart == true && RemainingEnemyCount == 0 && Enemys.Count == 0)
+        else if(controllerStage.isStart == true && RemainingEnemyCount == 0 && currentEnemys.Count == 0)
         {
             Debug.Log("Clear");
             controllerStage.CurrenStageClear();
@@ -51,6 +54,6 @@ public class Controller_Enemy : MonoBehaviour
 
     public void RemoveEnemy(GameObject e)
     {
-        Enemys.Remove(e);
+        currentEnemys.Remove(e);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Spine.Unity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,15 +13,19 @@ public class Enemy : MonoBehaviour
     const int BURN = 1;
     const int SLOW = 2;
 
+    SkeletonAnimation monsterAnimator;
     Controller_Tile controllerTile;
     Controller_Enemy controllerEnemy;
-    Animation anim;
     GameObject nextTile;
+    GameObject hb = null;
     int tileIndex = 0;
 
     public GameObject StunEffect;
+    public GameObject DamageEffect;
+    public GameObject HpBar;
     public float speed;
     public float hp;
+    public float maxhp;
 
     float next = 0.0f;
     float delay = 1.0f;
@@ -33,11 +38,12 @@ public class Enemy : MonoBehaviour
     {
         StateArr = new bool[STATE_COUNT];
         StateTime = new float[STATE_COUNT];
+        monsterAnimator = GetComponent<SkeletonAnimation>();
         controllerTile = GameObject.Find("BG_Field").GetComponent<Controller_Tile>();
         controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
-        anim = gameObject.GetComponent<Animation>();
 
         nextTile = controllerTile.route[0];
+        SetHpBar();
     }
 
     void Update()
@@ -52,16 +58,26 @@ public class Enemy : MonoBehaviour
         CheckNextTile();
 
         // 스턴상태 아니면 다음타일로 이동
-        if (!StateArr[STUN] && nextTile != null)
+        if (!StateArr[STUN] && nextTile != null && monsterAnimator.AnimationName != "Dead")
         {
-            Vector2 targetVec = nextTile.transform.position;
+            if(monsterAnimator.AnimationName != "Walk")
+                ChangeAnimation("Walk");
+
+            Vector2 targetVec = nextTile.transform.position - new Vector3(0, 0.4f, 0);
+
+            // 좌우회전
+            if (targetVec.x - transform.position.x < 0)
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            else
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+
             transform.position = Vector3.MoveTowards(transform.position, targetVec, Time.deltaTime * slowspeed * speed);
         }
     }
 
     void CheckNextTile()
     {
-        float closed = 0.01f;
+        float closed = 0.2f;
         Vector2 offset = nextTile.transform.position - transform.position;
         if (closed > offset.sqrMagnitude)
         {
@@ -101,13 +117,15 @@ public class Enemy : MonoBehaviour
     public void Damaged(float _attack)
     {
         hp -= _attack;
-        anim.Play("Damaged");
-
+        GameObject de = Instantiate(DamageEffect, transform.position, Quaternion.identity);
+        de.transform.GetChild(0).GetComponent<TextMesh>().text = "-"+_attack;
         // Die
         if (hp <= 0)
         {
-            controllerEnemy.Enemys.Remove(this.gameObject);
-            Destroy(this.gameObject);
+            ChangeAnimation("Dead");
+            controllerEnemy.currentEnemys.Remove(this.gameObject);
+            Destroy(hb);
+            Destroy(this.gameObject,1.5f);
         }
     }
 
@@ -120,5 +138,27 @@ public class Enemy : MonoBehaviour
         {
             burnDamage = sdam;
         }
+    }
+
+    public void ChangeAnimation(string AnimationName)  //Names are: Idle, Walk, Dead and Attack
+    {
+        if (monsterAnimator == null)
+            return;
+
+        bool IsLoop = true;
+        if (AnimationName == "Dead")
+            IsLoop = false;
+
+        //set the animation state to the selected one
+        monsterAnimator.AnimationState.SetAnimation(0, AnimationName, IsLoop);
+    }
+
+    void SetHpBar()
+    {
+        hb = Instantiate(HpBar);
+        //hb.transform.SetParent(transform);
+        hb.transform.localScale = new Vector3(0.03f, 0.03f, 0);
+        hb.transform.position = transform.position;
+        hb.GetComponent<HpBar>().TargetEnemy = this.gameObject;
     }
 }

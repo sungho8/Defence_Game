@@ -42,11 +42,11 @@ public class Shoot : MonoBehaviour
         float min = 10f;
         int minIndex = 0;
 
-        if (controllerEnemy.Enemys.Count != 0)
+        if (controllerEnemy.currentEnemys.Count != 0)
         {
-            for (int i = 0; i < controllerEnemy.Enemys.Count; i++)
+            for (int i = 0; i < controllerEnemy.currentEnemys.Count; i++)
             {
-                offset = controllerEnemy.Enemys[i].transform.position - transform.position;
+                offset = controllerEnemy.currentEnemys[i].transform.position - transform.position;
 
                 if (min > offset.sqrMagnitude)
                 {
@@ -54,7 +54,7 @@ public class Shoot : MonoBehaviour
                     minIndex = i;
                 }
             }
-            return controllerEnemy.Enemys[minIndex];
+            return controllerEnemy.currentEnemys[minIndex];
         }
         else
         {
@@ -62,7 +62,6 @@ public class Shoot : MonoBehaviour
         }
     }
 
-    // 총알 생성(부메랑 추가)
     void NormalBullet(GameObject _target)
     {
         GameObject temp = Instantiate(bullet, transform.position, Quaternion.identity);

@@ -7,6 +7,7 @@ public class ShopBuyBtn : MonoBehaviour
     public int index;
 
     Controller_Shop controllerShop;
+    GameObject message;
     AudioSource audioSource;
 
     private void Start()

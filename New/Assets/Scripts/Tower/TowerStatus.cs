@@ -19,7 +19,7 @@ public class TowerStatus : MonoBehaviour
 
     public int grade = 0;
     // 상점
-    public int cost = 1;
+    public int cost;
 
     public string effect;
 
@@ -30,6 +30,16 @@ public class TowerStatus : MonoBehaviour
 
     public void DestroyTower()
     {
+        int index = GetComponent<TowerDrag>().index;
+        if (currentState == "Field")
+        {
+            GameObject.Find("Storage").GetComponent<Storage_Tower>().Tower_Field[index] = null;
+        }
+        else
+        {
+            GameObject.Find("Storage").GetComponent<Storage_Tower>().Tower_Hand[-1 * index - 2] = null;
+        }
+        GameObject.Find("BG_Field").GetComponent<Controller_Tile>().CheckInvasionRoute();
         Destroy(this.gameObject);
     }
 

@@ -8,6 +8,7 @@ public class Controller_Shop : MonoBehaviour
     Controller_Stage controllerStage;
     Controller_Hand controllerHand;
     Controller_Tower controllerTower;
+    GameObject message;
     
     public GameObject hand;
     public GameObject soldOut;  // sold out sprite
@@ -23,6 +24,7 @@ public class Controller_Shop : MonoBehaviour
         controllerStage = GameObject.Find("BG_Field").GetComponent<Controller_Stage>();
         controllerTower = GameObject.Find("BG_Field").GetComponent<Controller_Tower>();
         controllerHand = hand.GetComponent<Controller_Hand>();
+        message = Resources.Load<GameObject>("Message");
 
         setNewItem();
     }
@@ -68,8 +70,21 @@ public class Controller_Shop : MonoBehaviour
         if(storageTower.Tower_Shop[slotIndex] != null)
         {
             int towerCost = storageTower.Tower_Shop[slotIndex].GetComponent<TowerStatus>().cost;
+
+            if(controllerHand.checkEmpty() == storageTower.Tower_Hand.Count)
+            {
+                Instantiate(message).GetComponent<Message>().MessageHand();
+                return;
+            }
+
+            if (controllerStage.Money < towerCost)
+            {
+                Instantiate(message).GetComponent<Message>().MessageCost();
+                return;
+            }
+
             // 핸드 자리 있는지 체크 & 돈 확인
-            if (controllerHand.checkEmpty() != storageTower.Tower_Hand.Count && controllerStage.Money >= towerCost)
+            if (controllerStage.Money >= towerCost)
             {
                 GameObject shopTower = shopSlots[slotIndex].transform.GetChild(3).gameObject;
                 TowerStatus status = shopTower.GetComponent<TowerStatus>();

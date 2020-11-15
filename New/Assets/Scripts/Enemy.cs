@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
 
     void CheckNextTile()
     {
-        float closed = 0.2f;
+        float closed = 0.4f;
         Vector2 offset = nextTile.transform.position - transform.position;
         if (closed > offset.sqrMagnitude)
         {

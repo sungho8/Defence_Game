@@ -12,7 +12,6 @@ public class LevelUp : MonoBehaviour
     private Vector3 viewPos;
     private bool isOn = false;
     
-
     private void Awake()
     {
         controllerStage = GameObject.Find("BG_Field").GetComponent<Controller_Stage>();

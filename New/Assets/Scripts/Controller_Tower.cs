@@ -118,8 +118,5 @@ public class Controller_Tower : MonoBehaviour
                 list.Add(t.towerName);
             }
         }
-
-        if(list.Count != 0)
-            Debug.Log(list.Count + " : "+ list[0]);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Controller_Enemy : MonoBehaviour
 {
     public GameObject Sponer;
+    public GameObject Goal;
     public List<GameObject> Enemys;
     public List<GameObject> currentEnemys;
 

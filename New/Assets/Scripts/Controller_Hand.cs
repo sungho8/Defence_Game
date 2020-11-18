@@ -37,6 +37,6 @@ public class Controller_Hand : MonoBehaviour
 
         storageTower.Tower_Hand[empty] = purchasedTower;
 
-        handSlots[empty].GetComponent<SpriteRenderer>().color = new Color(255,255,255,0);
+        //handSlots[empty].GetComponent<SpriteRenderer>().color = new Color(255,255,255,0);
     }
 }

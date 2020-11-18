@@ -18,16 +18,21 @@ public class Controller_Tile : MonoBehaviour
     public GameObject EndHand;
 
     private Controller_Hand controllerHand;
+    private Controller_Enemy controllerEnemy;
     private Storage_Tower storageTower;
     public readonly int row = 5;
     public readonly int col = 9;
     int min;
     bool isok;
 
+    int startRow = 4;
+    int endRow = 0;
+
     private void Awake()
     {
         storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
         controllerHand = GameObject.Find("Hand").GetComponent<Controller_Hand>();
+        controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
         tInit();
     }
 
@@ -56,7 +61,7 @@ public class Controller_Tile : MonoBehaviour
     {
         visit[cr, cc] = true;
         sroute += cr + "" + cc;
-        if (cr == 0 && cc == 0 && sroute.Length < min)
+        if (cr == endRow && cc == 0 && sroute.Length < min)
         {
             min = sroute.Length;
             
@@ -83,13 +88,23 @@ public class Controller_Tile : MonoBehaviour
         }
     }
 
+    public void ShuffleRoute()
+    {
+        startRow = Random.Range(0, 5);
+        endRow = Random.Range(0, 5);
+
+        controllerEnemy.Sponer.transform.position = Tile[startRow][col - 1].transform.position;
+        controllerEnemy.Goal.transform.position = Tile[endRow][0].transform.position;
+        CheckInvasionRoute();
+    }
+
     public bool CheckInvasionRoute()
     {
         min = 99;
         bool[,] visit = new bool[5, 9];
         isok = false;
         string sroute = "";
-        go(row - 1, col - 1, visit, sroute);
+        go(startRow, col - 1, visit, sroute);
 
         for(int i =0; i < Tile.Count; i++)
         {

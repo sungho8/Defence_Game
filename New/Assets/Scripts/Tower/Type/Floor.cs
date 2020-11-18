@@ -31,12 +31,7 @@ public class Floor : MonoBehaviour
                 Attack();
                 time = 0;
             }
-
-            if (!controllerStage.isStart)
-                Destroy(ef);
         }
-
-        
     }
 
     void Attack()
@@ -53,9 +48,19 @@ public class Floor : MonoBehaviour
         }
     }
 
-    public void EffectOn()
+    public void EffectOn(bool on)
     {
-        ef = Instantiate(Effect, transform.position, Quaternion.identity);
-        ef.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+        if (on)
+        {
+            ef = Instantiate(Effect, transform.position, Quaternion.identity);
+            ef.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+        }
+        else
+        {
+            Destroy(ef);
+        }
+        
     }
+
+
 }

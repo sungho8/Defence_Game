@@ -10,6 +10,7 @@ public class Controller_Stage : MonoBehaviour
     public GameObject ManaTextUI;
     public GameObject LevelTextUI;
 
+    Controller_Tile controllerTile;
     Controller_Shop controllerShop;
     Storage_Tower storage;
 
@@ -19,13 +20,13 @@ public class Controller_Stage : MonoBehaviour
         get {return isStart; 
         }
         set {
-            Debug.Log("스테이지 시작");
             if (value) StartEvent();
+            if (!value) EndEvent();
             isStart = value; }
     }
 
     public int Stage = 1;
-    int money = 30;
+    int money = 4;
     public int Money { 
         get { return money; } 
         set { money = value; SetTextMesh(); } 
@@ -57,6 +58,7 @@ public class Controller_Stage : MonoBehaviour
     {
         SetTextMesh();
         controllerShop = GameObject.Find("BG_Shop").GetComponent<Controller_Shop>();
+        controllerTile = GameObject.Find("BG_Field").GetComponent<Controller_Tile>();
         storage = GameObject.Find("Storage").GetComponent<Storage_Tower>();
     }
 
@@ -92,9 +94,28 @@ public class Controller_Stage : MonoBehaviour
     {
         for (int i = 0; i < storage.Tower_Field.Count; i++) 
         {
-            if(storage.Tower_Field[i] != null && storage.Tower_Field[i].GetComponent<Floor>() != null)
+            if(storage.Tower_Field[i] != null)
             {
-                storage.Tower_Field[i].GetComponent<Floor>().EffectOn();
+                if (storage.Tower_Field[i].GetComponent<Floor>() != null)
+                {
+                    storage.Tower_Field[i].GetComponent<Floor>().EffectOn(true);
+                }
+            }
+        }
+    }
+
+    public void EndEvent()
+    {
+        for (int i = 0; i < storage.Tower_Field.Count; i++)
+        {
+            if (storage.Tower_Field[i] != null)
+            {
+                controllerTile.ShuffleRoute();
+
+                if(storage.Tower_Field[i].GetComponent<Floor>() != null)
+                    storage.Tower_Field[i].GetComponent<Floor>().EffectOn(false);
+                else if(storage.Tower_Field[i].GetComponent<Product>() != null)
+                    storage.Tower_Field[i].GetComponent<Product>().Production();
             }
         }
     }

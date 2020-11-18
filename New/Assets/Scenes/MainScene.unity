@@ -3236,6 +3236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sponer: {fileID: 607591144}
+  Goal: {fileID: 2069617703}
   Enemys:
   - {fileID: 1867911510170808, guid: e0dc5b9c5a1759b4983be5f02a62649c, type: 3}
   - {fileID: 1024655841117016, guid: a1188405d2541df40a1d9520d61b68c2, type: 3}
@@ -4528,7 +4529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607591144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.443, y: -0.46, z: 0}
+  m_LocalPosition: {x: 0.443, y: -0.387, z: 0}
   m_LocalScale: {x: 0.096875004, y: 0.17222223, z: 0}
   m_Children: []
   m_Father: {fileID: 455641473}
@@ -20369,7 +20370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.809168, y: -20.03}
+  m_AnchoredPosition: {x: -12.49, y: -15.97}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1442798744
@@ -30009,7 +30010,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069617703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.456, y: 0.424, z: 0}
+  m_LocalPosition: {x: -0.456, y: 0.386, z: 0}
   m_LocalScale: {x: 0.096875004, y: 0.17222223, z: 0}
   m_Children: []
   m_Father: {fileID: 455641473}

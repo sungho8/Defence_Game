@@ -71,9 +71,7 @@ public class TowerDrag : MonoBehaviour
             initMousePos = Input.mousePosition;
             initMousePos.z = -10;
             initMousePos = Camera.main.ScreenToWorldPoint(initMousePos);
-            transform.position = new Vector3(transform.position.x + diffPos.x,
-                            transform.position.y + diffPos.y,
-                            transform.position.z);
+            transform.position = new Vector3(transform.position.x + diffPos.x, transform.position.y + diffPos.y, transform.position.z);
 
             index = controllerTile.CheckClosedTile(transform);
             // 필드

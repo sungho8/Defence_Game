@@ -83,7 +83,7 @@ public class Controller_Tile : MonoBehaviour
             if (nr < row && nc < col && nr >= 0 && nc >= 0 && !visit[nr, nc] && storageTower.Tower_Field[nr * col + nc] == null)
             {
                 go(nr, nc, visit, sroute);
-                visit[cr, cc] = false;
+                visit[nr, nc] = false;
             }
         }
     }
@@ -101,7 +101,7 @@ public class Controller_Tile : MonoBehaviour
     public bool CheckInvasionRoute()
     {
         min = 99;
-        bool[,] visit = new bool[5, 9];
+        bool[,] visit = new bool[row, col];
         isok = false;
         string sroute = "";
         go(startRow, col - 1, visit, sroute);
@@ -162,6 +162,8 @@ public class Controller_Tile : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log(result);
         return result;
     }
 

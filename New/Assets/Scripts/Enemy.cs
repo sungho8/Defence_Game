@@ -81,6 +81,8 @@ public class Enemy : MonoBehaviour
         Vector2 offset = nextTile.transform.position - transform.position;
         if (closed > offset.sqrMagnitude)
         {
+            if (tileIndex >= controllerTile.route.Count)
+                return;
             nextTile = controllerTile.route[++tileIndex];
         }
     }
@@ -117,7 +119,7 @@ public class Enemy : MonoBehaviour
     public void Damaged(float _attack)
     {
         hp -= _attack;
-        GameObject de = Instantiate(DamageEffect, transform.position, Quaternion.identity);
+        GameObject de = Instantiate(DamageEffect, transform.position + new Vector3(0,0.3f,0), Quaternion.identity);
         de.transform.GetChild(0).GetComponent<TextMesh>().text = "-"+_attack;
         // Die
         if (hp <= 0)

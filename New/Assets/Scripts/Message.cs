@@ -11,13 +11,6 @@ public class Message : MonoBehaviour
         transform.localScale = new Vector3(0.5f, 0.5f, 0);
     }
 
-    public void SetMessage(string str, Vector3 pos, Color col)
-    {
-        text.GetComponent<TextMesh>().text = str;
-        text.GetComponent<TextMesh>().color = col;
-        transform.position = pos;
-    }
-
     public void MessageMana()
     {
         text.GetComponent<TextMesh>().text = "마나가 부족합니다";
@@ -37,5 +30,12 @@ public class Message : MonoBehaviour
         text.GetComponent<TextMesh>().text = "골드가 부족합니다";
         text.GetComponent<TextMesh>().color = new Color(244 / 255f, 194 / 255f, 104 / 255f);
         transform.position = new Vector3(7, -2.8f, 0);
+    }
+
+    public void MessageRoute()
+    {
+        text.GetComponent<TextMesh>().text = "잘못된 경로입니다";
+        text.GetComponent<TextMesh>().color = new Color(244 / 255f, 5 / 255f, 5 / 255f);
+        transform.position = new Vector3(-6.2f, -3.2f, 0);
     }
 }

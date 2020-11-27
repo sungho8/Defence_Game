@@ -23,8 +23,14 @@ public class HpBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(TargetEnemy != null)
-            transform.position = TargetEnemy.transform.position - new Vector3(0, 0.25f, 0);
+        if (TargetEnemy == null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+            
+        transform.position = TargetEnemy.transform.position - new Vector3(0, 0.25f, 0);
+        
         hpBar.value = enemy.hp / enemy.maxhp;
         txt.text = enemy.hp+"";
     }

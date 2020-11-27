@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
         {
             GameObject temp = Instantiate(effect, target.transform.position, Quaternion.identity);
             Enemy enemy = target.GetComponent<Enemy>();
-            temp.transform.localScale = new Vector2(0.5f, 0.5f);
+            temp.transform.localScale = new Vector2(0.6f, 0.6f);
             enemy.Damaged(attack);
 
             // 상태이상

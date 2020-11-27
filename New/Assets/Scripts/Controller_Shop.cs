@@ -44,13 +44,20 @@ public class Controller_Shop : MonoBehaviour
     {
         DestroyPreShop();
 
-        List<GameObject> towers = storageTower.TowerList;
-
+        List<GameObject> towers = new List<GameObject>();
         int r;
+
+        for (int i = 0; i < storageTower.TowerList.Count; i++)
+        {
+            if(controllerStage.Level >= storageTower.TowerList[i].GetComponent<TowerStatus>().cost)
+            {
+                towers.Add(storageTower.TowerList[i]);
+            }
+        }
 
         for(int i =0; i < 5; i++)
         {
-            r = Random.Range(0,towers.Count);
+            r = Random.Range(0, towers.Count);
 
             GameObject temp = Instantiate(towers[r], shopSlots[i].transform.position, Quaternion.identity);
             temp.transform.SetParent(shopSlots[i].transform);
@@ -58,7 +65,6 @@ public class Controller_Shop : MonoBehaviour
 
             // name
             slotName[i].GetComponent<TextMesh>().text = temp.GetComponent<TowerStatus>().towerName;
-
             // cost
             slotCost[i].GetComponent<TextMesh>().text = temp.GetComponent<TowerStatus>().cost + "$";
         }

@@ -108,7 +108,8 @@ MonoBehaviour:
   direction: 0
   grade: 0
   cost: 2
-  effect: "\uB9E4\uD134\uC774 \uB05D\uB0A0\uB54C 1\uC6D0\uC744 \uC90D\uB2C8\uB2E4"
+  effect: "\uB9E4\uD134\uC774 \uB05D\uB0A0\uB54C \uACF5\uACA9\uB825\uB9CC\uD07C \uACE8\uB4DC\uB97C
+    \uD68D\uB4DD\uD569\uB2C8\uB2E4"
 --- !u!114 &-8841795181961539296
 MonoBehaviour:
   m_ObjectHideFlags: 0

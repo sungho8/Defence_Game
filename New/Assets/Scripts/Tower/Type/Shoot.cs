@@ -72,5 +72,4 @@ public class Shoot : MonoBehaviour
         bul.tower = this.gameObject;
         bul.attack = towerStatus.attack;
     }
-
 }

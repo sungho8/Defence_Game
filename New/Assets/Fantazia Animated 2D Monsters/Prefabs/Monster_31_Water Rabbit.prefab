@@ -82,7 +82,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1758204719
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &114972365687724254
@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0edf7d0a6e86d47b2423b5fa9d0f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StunEffect: {fileID: 0}
+  StunEffect: {fileID: 5258139999123183246, guid: 5ab5021e1e20ab44c86f36668e663dd1,
+    type: 3}
   DamageEffect: {fileID: 6979911753866702069, guid: 6315599bbbd7845479b514db07d446a9,
     type: 3}
   HpBar: {fileID: 4094546790799927587, guid: 1dd912eabcdd5714b89968ecd6b55273, type: 3}

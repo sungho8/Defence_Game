@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8847236175891132008}
   - component: {fileID: 5905932401903686047}
   - component: {fileID: 5036096915818017548}
-  - component: {fileID: 2724456660602912915}
   m_Layer: 0
   m_Name: DamageTxt
   m_TagString: Untagged
@@ -125,22 +124,7 @@ TextMesh:
   m_Font: {fileID: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4283061481
---- !u!114 &2724456660602912915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2617058796819663049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
+    rgba: 4278194431
 --- !u!1 &6979911753866702069
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +137,7 @@ GameObject:
   - component: {fileID: 641428698173713965}
   - component: {fileID: 8712174767380551319}
   m_Layer: 0
-  m_Name: DamageEffect
+  m_Name: TextEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

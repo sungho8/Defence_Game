@@ -22,6 +22,7 @@ ScriptsOnlyBuild:
     - Pierce
     - PierceBullet
     - PinchZoom
+    - Product
     - ReRoll
     - SetCamera
     - Shoot
@@ -48,10 +49,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -127,79 +126,81 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12280}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12360}
     - Class: 114
-      Script: {instanceID: 12362}
+      Script: {instanceID: 12364}
     - Class: 114
-      Script: {instanceID: 12370}
+      Script: {instanceID: 12372}
     - Class: 114
-      Script: {instanceID: 12378}
+      Script: {instanceID: 12380}
     - Class: 114
-      Script: {instanceID: 12402}
+      Script: {instanceID: 12404}
     - Class: 114
-      Script: {instanceID: 12512}
+      Script: {instanceID: 12514}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12552}
     - Class: 114
-      Script: {instanceID: 12648}
+      Script: {instanceID: 12650}
     - Class: 114
-      Script: {instanceID: 12672}
+      Script: {instanceID: 12674}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 12812}
+      Script: {instanceID: 12814}
     - Class: 114
-      Script: {instanceID: 12932}
+      Script: {instanceID: 12934}
     - Class: 114
-      Script: {instanceID: 13306}
+      Script: {instanceID: 13308}
     - Class: 114
-      Script: {instanceID: 13380}
+      Script: {instanceID: 13382}
     - Class: 114
-      Script: {instanceID: 13634}
+      Script: {instanceID: 13636}
     - Class: 114
-      Script: {instanceID: 13694}
+      Script: {instanceID: 13696}
     - Class: 114
-      Script: {instanceID: 13944}
+      Script: {instanceID: 13946}
     - Class: 114
-      Script: {instanceID: 14256}
+      Script: {instanceID: 14258}
     - Class: 114
-      Script: {instanceID: 14264}
+      Script: {instanceID: 14266}
     - Class: 114
-      Script: {instanceID: 14398}
+      Script: {instanceID: 14400}
     - Class: 114
-      Script: {instanceID: 14470}
+      Script: {instanceID: 14472}
     - Class: 114
-      Script: {instanceID: 14518}
+      Script: {instanceID: 14520}
     - Class: 114
-      Script: {instanceID: 14584}
+      Script: {instanceID: 14586}
     - Class: 114
-      Script: {instanceID: 14604}
+      Script: {instanceID: 14606}
     - Class: 114
-      Script: {instanceID: 14788}
+      Script: {instanceID: 14790}
     - Class: 114
-      Script: {instanceID: 14818}
+      Script: {instanceID: 14820}
     - Class: 114
-      Script: {instanceID: 15282}
+      Script: {instanceID: 15284}
     - Class: 114
-      Script: {instanceID: 15344}
+      Script: {instanceID: 15314}
     - Class: 114
-      Script: {instanceID: 15550}
+      Script: {instanceID: 15348}
     - Class: 114
-      Script: {instanceID: 15652}
+      Script: {instanceID: 15554}
     - Class: 114
-      Script: {instanceID: 15672}
+      Script: {instanceID: 15656}
     - Class: 114
-      Script: {instanceID: 15880}
+      Script: {instanceID: 15676}
     - Class: 114
-      Script: {instanceID: 15906}
+      Script: {instanceID: 15884}
     - Class: 114
-      Script: {instanceID: 16058}
+      Script: {instanceID: 15910}
     - Class: 114
-      Script: {instanceID: 16126}
+      Script: {instanceID: 15930}
     - Class: 114
-      Script: {instanceID: 16242}
+      Script: {instanceID: 16064}
     - Class: 114
-      Script: {instanceID: 40528}
+      Script: {instanceID: 16132}
+    - Class: 114
+      Script: {instanceID: 16248}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -397,6 +398,12 @@ ScriptsOnlyBuild:
     assemblyName: spine-unity-examples.dll
     namespaceName: Spine.Unity.Examples
     className: MaterialReplacementExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Controller_Message
   - hash:
       serializedVersion: 2
       Hash: fd8b23ad3c9e81bc85b197495bc510ac
@@ -1161,7 +1168,7 @@ ScriptsOnlyBuild:
     className: BoneLocalOverride
   - hash:
       serializedVersion: 2
-      Hash: afa7a9fafb967bce6d1b252e59caec69
+      Hash: b5d7d27694e04eb07c772a9f8b713098
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controller_Enemy
@@ -1273,6 +1280,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ManaUp
+  - hash:
+      serializedVersion: 2
+      Hash: e02d60264cda3bde8318c551211e7927
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Message
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -1443,6 +1456,12 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: 1214f64b84e97583e945086e705fee31
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Product
+  - hash:
+      serializedVersion: 2
       Hash: 7c07b6fe2e95fe7b187606a3b84c80b2
     assemblyName: spine-unity-examples.dll
     namespaceName: Spine.Unity.Examples
@@ -1579,24 +1598,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: e02d60264cda3bde8318c551211e7927
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Message
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Controller_Message
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Product
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity

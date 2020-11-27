@@ -10,6 +10,7 @@ public class Controller_Tile : MonoBehaviour
     // Dir(left > up = down > right)
     int[] dirx = { -1, 0, 0, 1 };
     int[] diry = { 0, -1, 1, 0 };
+    int[,] cost;
 
     public GameObject StartTile;
     public GameObject EndTile;
@@ -20,6 +21,7 @@ public class Controller_Tile : MonoBehaviour
     private Controller_Hand controllerHand;
     private Controller_Enemy controllerEnemy;
     private Storage_Tower storageTower;
+    private GameObject message;
     public readonly int row = 5;
     public readonly int col = 9;
     int min;
@@ -33,12 +35,14 @@ public class Controller_Tile : MonoBehaviour
         storageTower = GameObject.Find("Storage").GetComponent<Storage_Tower>();
         controllerHand = GameObject.Find("Hand").GetComponent<Controller_Hand>();
         controllerEnemy = GameObject.Find("BG_Field").GetComponent<Controller_Enemy>();
+        message = Resources.Load<GameObject>("Message");
+        cost = new int[row, col];
         tInit();
     }
 
     private void Start()
     {
-        CheckInvasionRoute();
+        ShuffleRoute();
     }
 
     void tInit()
@@ -57,9 +61,20 @@ public class Controller_Tile : MonoBehaviour
         }
     }
 
-    void go(int cr, int cc, bool[,] visit, string sroute)
+    void cInit()
     {
-        visit[cr, cc] = true;
+        for(int i =0; i < row; i++)
+        {
+            for(int j =0; j < col; j++)
+            {
+                cost[i,j] = 500;
+            }
+        }
+    }
+
+    void go(int depth, int cr, int cc, string sroute)
+    {
+        cost[cr, cc] = depth;
         sroute += cr + "" + cc;
         if (cr == endRow && cc == 0 && sroute.Length < min)
         {
@@ -80,10 +95,10 @@ public class Controller_Tile : MonoBehaviour
         {
             int nr = cr + diry[i];
             int nc = cc + dirx[i];
-            if (nr < row && nc < col && nr >= 0 && nc >= 0 && !visit[nr, nc] && storageTower.Tower_Field[nr * col + nc] == null)
+            // row,col 이내에 cost값 판단하면서 경로 이동
+            if (nr < row && nc < col && nr >= 0 && nc >= 0 && cost[nr, nc] >= depth && storageTower.Tower_Field[nr * col + nc] == null)
             {
-                go(nr, nc, visit, sroute);
-                visit[nr, nc] = false;
+                go(depth + 1, nr, nc, sroute);
             }
         }
     }
@@ -100,11 +115,13 @@ public class Controller_Tile : MonoBehaviour
 
     public bool CheckInvasionRoute()
     {
-        min = 99;
-        bool[,] visit = new bool[row, col];
-        isok = false;
+        //bool[,] visit = new bool[row, col];
         string sroute = "";
-        go(startRow, col - 1, visit, sroute);
+        cInit();
+        min = 99;
+        isok = false;
+        if (storageTower.Tower_Field[startRow * col + col - 1] == null) 
+            go(0, startRow, col - 1,  sroute);
 
         for(int i =0; i < Tile.Count; i++)
         {
@@ -113,13 +130,15 @@ public class Controller_Tile : MonoBehaviour
                 Tile[i][j].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1,67/255f);
             }
         }
-
         if (isok)
         {
             for(int i = 0; i < route.Count; i++)
             {
                 route[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 20/255f);
             }
+        }
+        else{
+            Instantiate(message).GetComponent<Message>().MessageRoute();
         }
 
         return isok;
@@ -141,7 +160,7 @@ public class Controller_Tile : MonoBehaviour
                 {
                     offset = Tile[i][j].transform.position - t.position;
                     //&& CheckInvasionRoute(Tile[i][j])
-                    if (min > offset.sqrMagnitude && storageTower.Tower_Field[i] == null)
+                    if (min > offset.sqrMagnitude && storageTower.Tower_Field[i * col + j] == null)
                     {
                         min = offset.sqrMagnitude;
                         result = i * col + j;
@@ -163,7 +182,7 @@ public class Controller_Tile : MonoBehaviour
             }
         }
 
-        Debug.Log(result);
+        //Debug.Log(result);
         return result;
     }
 

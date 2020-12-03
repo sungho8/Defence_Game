@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fea4f99ec353e4428197494f5482b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  tower: {fileID: 0}
   effect: {fileID: 1526314732346894, guid: e8a902c24167e964e82b3ac5dcbe8b8c, type: 3}
   BulletType: 1
   timeType: 5
   damageType: 1
-  attack: 5
   speed: 5
 --- !u!212 &7169021536836798879
 SpriteRenderer:

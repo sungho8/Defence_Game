@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fea4f99ec353e4428197494f5482b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  tower: {fileID: 0}
   effect: {fileID: 1140356249160582, guid: e7988ba896094a54cb49da545a6ab92d, type: 3}
   BulletType: 2
   timeType: 2
